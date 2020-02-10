@@ -30,21 +30,20 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="Search">
-    <meta name="description" content="Searcha. In deterministic environments the search solution is a single sequence (list of actions) b. Stochastic environments need multiple sequences to account for all possible outcomes of actions c.">
+    <meta name="description" content="Uniformed Searcha. In deterministic environments the search solution is a single sequence (list of actions) b. Stochastic environments need multiple sequences to account for all possible outcomes of a">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Uniformed Search">
 <meta property="og:url" content="http://yoursite.com/2020/02/06/Search/index.html">
 <meta property="og:site_name" content="Hi There">
-<meta property="og:description" content="Searcha. In deterministic environments the search solution is a single sequence (list of actions) b. Stochastic environments need multiple sequences to account for all possible outcomes of actions c.">
+<meta property="og:description" content="Uniformed Searcha. In deterministic environments the search solution is a single sequence (list of actions) b. Stochastic environments need multiple sequences to account for all possible outcomes of a">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yoursite.com/images/pasted-0.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-7.png">
 <meta property="og:image" content="http://yoursite.com/images/pasted-10.png">
 <meta property="og:image" content="http://yoursite.com/images/pasted-13.png">
 <meta property="og:image" content="http://yoursite.com/images/pasted-15.png">
 <meta property="og:image" content="http://yoursite.com/images/pasted-17.png">
 <meta property="article:published_time" content="2020-02-07T01:55:00.000Z">
-<meta property="article:modified_time" content="2020-02-10T02:20:29.630Z">
+<meta property="article:modified_time" content="2020-02-10T20:37:24.365Z">
 <meta property="article:author" content="isFibonacci">
 <meta property="article:tag" content="Search">
 <meta name="twitter:card" content="summary">
@@ -190,7 +189,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Search"><span class="post-toc-number">1.</span> <span class="post-toc-text">Search</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Search-algorithm"><span class="post-toc-number">2.</span> <span class="post-toc-text">Search algorithm</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Uniformed-Search"><span class="post-toc-number">1.</span> <span class="post-toc-text">Uniformed Search</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Search-algorithm"><span class="post-toc-number">2.</span> <span class="post-toc-text">Search algorithm</span></a></li></ol>
         </nav>
     </aside>
 
@@ -216,7 +215,7 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h2 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h2><pre><code>a. In deterministic environments the search solution is a single sequence (list of actions)
+            <h2 id="Uniformed-Search"><a href="#Uniformed-Search" class="headerlink" title="Uniformed Search"></a>Uniformed Search</h2><pre><code>a. In deterministic environments the search solution is a single sequence (list of actions)
 b. Stochastic environments need multiple sequences to account for all possible outcomes of actions
 c. There are 5 parts to search: 
    1. Initial state 
@@ -233,7 +232,7 @@ The only modification is when exploring a node we cannot disregard it if it has 
 UCS is.. 1. Complete (if costs strictly greater than 0) 2. Optimal However.... 3&amp;4. Time complexity = space complexity = O(b1+C*/min(path cost)), where C* cost of optimal solution (much worse than BFS)
 
     b. Bidirectional search 
-It starts from both the goal and start (using BFS) until the trees meet This is better as 2*(bd/2) &lt; bd (the space is much worse than IDS, so only applicable to small problems)</code></pre><p><img src="/images/pasted-7.png" alt="upload successful"></p>
+It starts from both the goal and start (using BFS) until the trees meet This is better as 2*(bd/2) &lt; bd (the space is much worse than IDS, so only applicable to small problems)</code></pre><p>![upload successful](/images/pasted-7.png =100x)</p>
 <p>DFS: FILO<br>Metrics:<br>    1. Might not terminate (not correct) (e.g. in vacuum world, if first expand is action L)<br>    2. Non-optimal (just… no)<br>    3. Time complexity = O(bd )<br>    4. Space complexity = O(b*d) Only way this is better than BFS is the space complexity… DFS by itself is not great, but it has two (very) useful modifications</p>
 <pre><code>a. Depth limited search </code></pre><p>It runs normal DFS, but if it is at a specified depth limit, you cannot have children (i.e. take another action) However, if you pick the depth limit before d, you will not find a solution (not correct, but will terminate)</p>
 <p><img src="/images/pasted-10.png" alt="upload successful"></p>
@@ -258,7 +257,7 @@ It starts from both the goal and start (using BFS) until the trees meet This is 
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2020-02-10T02:20:29.630Z" itemprop="dateUpdated">2020-02-09 20:20:29</time>
+    Last updated: <time datetime="2020-02-10T20:37:24.365Z" itemprop="dateUpdated">2020-02-10 14:37:24</time>
 </span><br>
 
 

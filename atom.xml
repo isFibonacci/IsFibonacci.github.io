@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-10T02:34:09.276Z</updated>
+  <updated>2020-02-10T21:06:48.371Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Application Layer</title>
+    <link href="http://yoursite.com/2020/02/08/Application%20Layer/"/>
+    <id>http://yoursite.com/2020/02/08/Application%20Layer/</id>
+    <published>2020-02-09T01:55:00.000Z</published>
+    <updated>2020-02-10T21:06:48.371Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="World-Wide-Web"><a href="#World-Wide-Web" class="headerlink" title="World Wide Web"></a>World Wide Web</h2><p>Flow</p><p>A flow (session)</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;World-Wide-Web&quot;&gt;&lt;a href=&quot;#World-Wide-Web&quot; class=&quot;headerlink&quot; title=&quot;World Wide Web&quot;&gt;&lt;/a&gt;World Wide Web&lt;/h2&gt;&lt;p&gt;Flow&lt;/p&gt;
+&lt;p&gt;A flow (se
+      
+    
+    </summary>
+    
+    
+      <category term="Networking" scheme="http://yoursite.com/categories/Networking/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Common errors make your program crash</title>
@@ -47,15 +72,15 @@
     <link href="http://yoursite.com/2020/02/06/Search/"/>
     <id>http://yoursite.com/2020/02/06/Search/</id>
     <published>2020-02-07T01:55:00.000Z</published>
-    <updated>2020-02-10T02:20:29.630Z</updated>
+    <updated>2020-02-10T20:37:24.365Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h2><pre><code>a. In deterministic environments the search solution is a single sequence (list of actions)b. Stochastic environments need multiple sequences to account for all possible outcomes of actionsc. There are 5 parts to search:    1. Initial state    2. Actions possible at each state    3. Transition model (result of each action)    4. Goal test (are we there yet?)   5. Path costs/weights (not stored in states) (related to performance measure)</code></pre><p>   <img src="/images/pasted-0.png" alt="upload successful"></p><h2 id="Search-algorithm"><a href="#Search-algorithm" class="headerlink" title="Search algorithm"></a>Search algorithm</h2><pre><code>   BFS: FIFOThe search algorithms metrics/criteria: 1. Completeness (does it terminate with a valid solution) 2. Optimality (is the answer the best solution) 3. Time (in big-O notation) 4. Space (big-O) b = maximum branching factor d = minimum depth of a goal m = maximum length of any path    a. Uniform-cost searchThe only modification is when exploring a node we cannot disregard it if it has already been explored by another node We might have found a shorter path and thus need to update the cost on that node We also do not terminate when we find a goal, but instead when the goal has the lowest cost in the queue.UCS is.. 1. Complete (if costs strictly greater than 0) 2. Optimal However.... 3&amp;4. Time complexity = space complexity = O(b1+C*/min(path cost)), where C* cost of optimal solution (much worse than BFS)    b. Bidirectional search It starts from both the goal and start (using BFS) until the trees meet This is better as 2*(bd/2) &lt; bd (the space is much worse than IDS, so only applicable to small problems)</code></pre><p><img src="/images/pasted-7.png" alt="upload successful"></p><p>DFS: FILO<br>Metrics:<br>    1. Might not terminate (not correct) (e.g. in vacuum world, if first expand is action L)<br>    2. Non-optimal (just… no)<br>    3. Time complexity = O(bd )<br>    4. Space complexity = O(b*d) Only way this is better than BFS is the space complexity… DFS by itself is not great, but it has two (very) useful modifications</p><pre><code>a. Depth limited search </code></pre><p>It runs normal DFS, but if it is at a specified depth limit, you cannot have children (i.e. take another action) However, if you pick the depth limit before d, you will not find a solution (not correct, but will terminate)</p><p><img src="/images/pasted-10.png" alt="upload successful"></p><pre><code>b. iterative deepening DFS</code></pre><p>This search performs depth limited search with maximum depth 1, then maximum depth 2, then 3… until it finds a solution</p><p><img src="/images/pasted-13.png" alt="upload successful"></p><p>The first few states do get re-checked multiple times in IDS, however it is not too many When you find the solution at depth d, depth 1 is expanded d times (at most b of them) The second depth are expanded d-1 times (at most b2 of them) Thus</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/pasted-15.png" alt="upload successful" title="">                </div>                <div class="image-caption">upload successful</div>            </figure><p>Metrics:<br>    1. Complete 2. Non-optimal (unless uniform cost) 3. O(bd ) 4. O(b*d) Thus IDS is better in every way than BFS (asymptotically) Best uninformed we will talk about</p><p><img src="/images/pasted-17.png" alt="upload successful"></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="Uniformed-Search"><a href="#Uniformed-Search" class="headerlink" title="Uniformed Search"></a>Uniformed Search</h2><pre><code>a. In deterministic environments the search solution is a single sequence (list of actions)b. Stochastic environments need multiple sequences to account for all possible outcomes of actionsc. There are 5 parts to search:    1. Initial state    2. Actions possible at each state    3. Transition model (result of each action)    4. Goal test (are we there yet?)   5. Path costs/weights (not stored in states) (related to performance measure)</code></pre><p>   <img src="/images/pasted-0.png" alt="upload successful"></p><h2 id="Search-algorithm"><a href="#Search-algorithm" class="headerlink" title="Search algorithm"></a>Search algorithm</h2><pre><code>   BFS: FIFOThe search algorithms metrics/criteria: 1. Completeness (does it terminate with a valid solution) 2. Optimality (is the answer the best solution) 3. Time (in big-O notation) 4. Space (big-O) b = maximum branching factor d = minimum depth of a goal m = maximum length of any path    a. Uniform-cost searchThe only modification is when exploring a node we cannot disregard it if it has already been explored by another node We might have found a shorter path and thus need to update the cost on that node We also do not terminate when we find a goal, but instead when the goal has the lowest cost in the queue.UCS is.. 1. Complete (if costs strictly greater than 0) 2. Optimal However.... 3&amp;4. Time complexity = space complexity = O(b1+C*/min(path cost)), where C* cost of optimal solution (much worse than BFS)    b. Bidirectional search It starts from both the goal and start (using BFS) until the trees meet This is better as 2*(bd/2) &lt; bd (the space is much worse than IDS, so only applicable to small problems)</code></pre><p>![upload successful](/images/pasted-7.png =100x)</p><p>DFS: FILO<br>Metrics:<br>    1. Might not terminate (not correct) (e.g. in vacuum world, if first expand is action L)<br>    2. Non-optimal (just… no)<br>    3. Time complexity = O(bd )<br>    4. Space complexity = O(b*d) Only way this is better than BFS is the space complexity… DFS by itself is not great, but it has two (very) useful modifications</p><pre><code>a. Depth limited search </code></pre><p>It runs normal DFS, but if it is at a specified depth limit, you cannot have children (i.e. take another action) However, if you pick the depth limit before d, you will not find a solution (not correct, but will terminate)</p><p><img src="/images/pasted-10.png" alt="upload successful"></p><pre><code>b. iterative deepening DFS</code></pre><p>This search performs depth limited search with maximum depth 1, then maximum depth 2, then 3… until it finds a solution</p><p><img src="/images/pasted-13.png" alt="upload successful"></p><p>The first few states do get re-checked multiple times in IDS, however it is not too many When you find the solution at depth d, depth 1 is expanded d times (at most b of them) The second depth are expanded d-1 times (at most b2 of them) Thus</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/pasted-15.png" alt="upload successful" title="">                </div>                <div class="image-caption">upload successful</div>            </figure><p>Metrics:<br>    1. Complete 2. Non-optimal (unless uniform cost) 3. O(bd ) 4. O(b*d) Thus IDS is better in every way than BFS (asymptotically) Best uninformed we will talk about</p><p><img src="/images/pasted-17.png" alt="upload successful"></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;Search&quot;&gt;&lt;a href=&quot;#Search&quot; class=&quot;headerlink&quot; title=&quot;Search&quot;&gt;&lt;/a&gt;Search&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;a. In deterministic environments the search so
+        &lt;h2 id=&quot;Uniformed-Search&quot;&gt;&lt;a href=&quot;#Uniformed-Search&quot; class=&quot;headerlink&quot; title=&quot;Uniformed Search&quot;&gt;&lt;/a&gt;Uniformed Search&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;a. In 
       
     
     </summary>
