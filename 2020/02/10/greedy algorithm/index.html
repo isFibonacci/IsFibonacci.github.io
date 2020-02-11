@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'true', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- End Google Analytics -->
+
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Greedy Algorithm | Hi There | If people do not believe that mathematics is simple, it is only because they do not realize how complicated life is. – John von Neumann.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="leetcode,greedy algorithm">
+    <meta name="description" content="860. Lemonade Change1234567Input: [5,5,5,10,20]Output: trueExplanation: From the first 3 customers, we collect three $5 bills in order.From the fourth customer, we collect a $10 bill and give back a $">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Greedy Algorithm">
+<meta property="og:url" content="http://yoursite.com/2020/02/10/greedy%20algorithm/index.html">
+<meta property="og:site_name" content="Hi There">
+<meta property="og:description" content="860. Lemonade Change1234567Input: [5,5,5,10,20]Output: trueExplanation: From the first 3 customers, we collect three $5 bills in order.From the fourth customer, we collect a $10 bill and give back a $">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-11T01:55:00.000Z">
+<meta property="article:modified_time" content="2020-02-11T17:12:15.913Z">
+<meta property="article:author" content="isFibonacci">
+<meta property="article:tag" content="leetcode">
+<meta property="article:tag" content="greedy algorithm">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="Hi There" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/avatar.jpeg">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/img/avatar.jpeg" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">isFibonacci</h5>
+          <a href="mailto:xwcehg497@gmail.com" title="xwcehg497@gmail.com" class="mail">xwcehg497@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/isfibonacci" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.weibo.com/5512263576/profile?topnav=1&wvr=6" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.zhihu.com/people/kujira-89" target="_blank" rel="noopener"  >
+                <i class="icon icon-lg icon-link"></i>
+                Zhihu
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Greedy Algorithm</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Greedy Algorithm</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-02-11T01:55:00.000Z" itemprop="datePublished" class="page-time">
+  2020-02-10
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/leetcode/">leetcode</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#860-Lemonade-Change"><span class="post-toc-number">1.</span> <span class="post-toc-text">860. Lemonade Change</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#392-Is-Subsequence"><span class="post-toc-number">2.</span> <span class="post-toc-text">392. Is Subsequence</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#455-Assign-Cookies"><span class="post-toc-number">3.</span> <span class="post-toc-text">455. Assign Cookies</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#55-Jump-Game"><span class="post-toc-number">4.</span> <span class="post-toc-text">55. Jump Game</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#45-Jump-Game-II"><span class="post-toc-number">5.</span> <span class="post-toc-text">45. Jump Game II</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-greedy algorithm"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Greedy Algorithm</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-02-10 19:55:00" datetime="2020-02-11T01:55:00.000Z"  itemprop="datePublished">2020-02-10</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/leetcode/">leetcode</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="860-Lemonade-Change"><a href="#860-Lemonade-Change" class="headerlink" title="860. Lemonade Change"></a><a href="https://leetcode.com/problems/lemonade-change/" target="_blank" rel="noopener">860. Lemonade Change</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Input: [5,5,5,10,20]</span><br><span class="line">Output: true</span><br><span class="line">Explanation: </span><br><span class="line">From the first 3 customers, we collect three $5 bills in order.</span><br><span class="line">From the fourth customer, we collect a $10 bill and give back a $5.</span><br><span class="line">From the fifth customer, we give a $10 bill and a $5 bill.</span><br><span class="line">Since all customers got correct change, we output true.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. Every time we choose the largest one to exchange, like 20 -&gt; 10 + 5</span><br><span class="line">2. if use 10 to exchange 5 we will have 10, so ten +&#x3D; 1</span><br><span class="line">3. for 20 case, we cannot just return false if there is not 10, </span><br><span class="line">since we can use 5+5+5 to exchange</span><br><span class="line">4. make sure temp &#x3D;&#x3D; 0t to quit, otherwise we will have negative temp</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lemonadeChange</span><span class="params">(self, bills: List[int])</span> -&gt; bool:</span></span><br><span class="line">        five, ten = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> cur <span class="keyword">in</span> bills :</span><br><span class="line">            <span class="keyword">if</span> cur == <span class="number">5</span> :</span><br><span class="line">                five += <span class="number">1</span></span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> cur == <span class="number">10</span> :</span><br><span class="line">                <span class="comment">#need 5</span></span><br><span class="line">                <span class="keyword">if</span> five :</span><br><span class="line">                    five -= <span class="number">1</span></span><br><span class="line">                    </span><br><span class="line">                    <span class="comment">#exchange to ten, so ten +1</span></span><br><span class="line">                    ten += <span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span> :</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">                </span><br><span class="line">            <span class="keyword">if</span> cur == <span class="number">20</span> :</span><br><span class="line">                <span class="comment">#need 15</span></span><br><span class="line">                </span><br><span class="line">                temp = <span class="number">15</span></span><br><span class="line">                <span class="keyword">if</span> ten :</span><br><span class="line">                    ten -= <span class="number">1</span></span><br><span class="line">                    temp -= <span class="number">10</span></span><br><span class="line">                <span class="comment">#cannot return false, bc we can return 5+5+5</span></span><br><span class="line">                <span class="keyword">while</span> five <span class="keyword">and</span> temp: </span><br><span class="line">                <span class="comment">#make sure when temp = 0 quit, or it will loop to negative</span></span><br><span class="line">                    five -= <span class="number">1</span></span><br><span class="line">                    temp -= <span class="number">5</span></span><br><span class="line">                <span class="keyword">if</span> temp :</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="392-Is-Subsequence"><a href="#392-Is-Subsequence" class="headerlink" title="392. Is Subsequence"></a><a href="https://leetcode.com/problems/is-subsequence/" target="_blank" rel="noopener">392. Is Subsequence</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Example 1:</span><br><span class="line">s &#x3D; &quot;abc&quot;, t &#x3D; &quot;ahbgdc&quot;</span><br><span class="line"></span><br><span class="line">Return true.</span><br><span class="line"></span><br><span class="line">Example 2:</span><br><span class="line">s &#x3D; &quot;axc&quot;, t &#x3D; &quot;ahbgdc&quot;</span><br><span class="line"></span><br><span class="line">Return false.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1. Two pointers, make suer k lease than len(s)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isSubsequence</span><span class="params">(self, s: str, t: str)</span> -&gt; bool:</span></span><br><span class="line">        i, k = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> i &lt; len(t) <span class="keyword">and</span> k &lt; len(s) :</span><br><span class="line">            <span class="keyword">if</span> s[k] == t[i] :</span><br><span class="line">                k += <span class="number">1</span></span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> k == len(s)</span><br></pre></td></tr></table></figure>
+
+<h2 id="455-Assign-Cookies"><a href="#455-Assign-Cookies" class="headerlink" title="455. Assign Cookies"></a><a href="https://leetcode.com/problems/assign-cookies/" target="_blank" rel="noopener">455. Assign Cookies</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Input: [1,2,3], [1,1]</span><br><span class="line"></span><br><span class="line">Output: 1</span><br><span class="line"></span><br><span class="line">Explanation: You have 3 children and 2 cookies. The greed factors of 3 children are 1, 2, 3. </span><br><span class="line">And even though you have 2 cookies, since their size is both 1, </span><br><span class="line">you could only make the child whose greed factor is 1 content.</span><br><span class="line">You need to output 1.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findContentChildren</span><span class="params">(self, g: List[int], s: List[int])</span> -&gt; int:</span></span><br><span class="line">        <span class="comment">#who come first, give the cookies to him</span></span><br><span class="line">        </span><br><span class="line">        g = sorted(g)</span><br><span class="line">        s = sorted(s)</span><br><span class="line">        </span><br><span class="line">        res, j = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range (len(g)) :</span><br><span class="line">            <span class="comment">#not satisified</span></span><br><span class="line">            <span class="keyword">while</span> j &lt; len(s) <span class="keyword">and</span> s[j] &lt; g[i] :</span><br><span class="line">                j += <span class="number">1</span></span><br><span class="line">            </span><br><span class="line">            <span class="comment">#satisified</span></span><br><span class="line">            <span class="keyword">if</span> j &lt; len(s) :</span><br><span class="line">                res += <span class="number">1</span></span><br><span class="line">                </span><br><span class="line">                <span class="comment">#make sure j += 1, bc have used</span></span><br><span class="line">                j += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+<h2 id="55-Jump-Game"><a href="#55-Jump-Game" class="headerlink" title="55. Jump Game"></a><a href="https://leetcode.com/problems/jump-game/" target="_blank" rel="noopener">55. Jump Game</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: [3,2,1,0,4]</span><br><span class="line">Output: false</span><br><span class="line">Explanation: You will always arrive at index 3 no matter what. Its maximum</span><br><span class="line">             jump length is 0, which makes it impossible to reach the last index.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">canJump</span><span class="params">(self, nums: List[int])</span> -&gt; bool:</span></span><br><span class="line">        n = len(nums)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">0</span> :</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        i, maxDist = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">#maxDist : the maximum position you can arrive so far</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> i &lt; n <span class="keyword">and</span> i &lt;= maxDist : <span class="comment"># if i &gt; maxDist, we cannnot get i position</span></span><br><span class="line">            maxDist = max(i + nums[i], maxDist)</span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">            <span class="comment"># [3, 1, 2, 0] -&gt; i = 0, maxDist = 3, we can arrive i = 3 maximum; </span></span><br><span class="line">            <span class="comment"># i = 2, maxDist = 2 + 2 = 4, arrive i = 4 maximum</span></span><br><span class="line">        <span class="keyword">return</span> maxDist &gt;= n<span class="number">-1</span> <span class="comment">#not maxDist &gt;= i, bc after loop i+= 1 &gt; n-1</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="45-Jump-Game-II"><a href="#45-Jump-Game-II" class="headerlink" title="45. Jump Game II"></a><a href="https://leetcode.com/problems/jump-game-ii/" target="_blank" rel="noopener">45. Jump Game II</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: [2,3,1,1,4]</span><br><span class="line">Output: 2</span><br><span class="line">Explanation: The minimum number of jumps to reach the last index is 2.</span><br><span class="line">    Jump 1 step from index 0 to 1, then 3 steps to the last index.</span><br></pre></td></tr></table></figure>
+<p>At i = 0, if choose jump 2 -&gt; i = 2, we can only jump 1 -&gt; i = 3<br>we can only jump 1 -&gt; i = 4<br>so total is 3</p>
+<p>At i = 0, if choose jump 1 -&gt; i = 1, we can jump 3 -&gt; i = 4<br>so total is 4</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Proof : f[i]  &gt; f[i+1] is wrong</span><br><span class="line">f[i] : the minimum steps to arrive i</span><br><span class="line">f[i+1] : the minimum steps to arrive i+1</span><br><span class="line">we prove f[i] &lt;&#x3D; f[i+1] is correct</span><br><span class="line">Assume at j, we need to arrive at i+1. </span><br><span class="line"></span><br><span class="line">j+nums[j] &gt;&#x3D; i+1</span><br><span class="line">[2, 3, 1, 1, 4]</span><br><span class="line">j &#x3D; 0, i+1 &#x3D; 1</span><br><span class="line">j+nums[j]  &#x3D; 0+2, we can arrive position at 2 maximum</span><br><span class="line"></span><br><span class="line">Assume we at j, and want to arrive at i+1, we need to jump plus 1</span><br><span class="line">f[i+1] &#x3D; f[j] + 1</span><br><span class="line">we can also arrive at i by f[j] + 1 steps at least</span><br><span class="line">so f[i] &#x3D; f[j] + 1</span><br><span class="line">Hence, f[i] &lt;&#x3D; f[i+1]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">jump</span><span class="params">(self, nums: List[int])</span> -&gt; int:</span></span><br><span class="line">        </span><br><span class="line">        n = len(nums)</span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">0</span> <span class="keyword">or</span> n == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">        l, r, step = <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> l &lt;= r :</span><br><span class="line">            <span class="comment"># we check at each postion we can jump how far  </span></span><br><span class="line">            maxDist = <span class="number">0</span></span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(l, r+<span class="number">1</span>) : <span class="comment"># want to check l == r, l &lt;= r so r+1</span></span><br><span class="line">                 <span class="comment"># maxDist : at i position, how far we can jump</span></span><br><span class="line">                maxDist = max(i+nums[i], maxDist)</span><br><span class="line">                </span><br><span class="line">            l = r+<span class="number">1</span> <span class="comment"># can arrive at r at least</span></span><br><span class="line">            r = maxDist</span><br><span class="line">            step += <span class="number">1</span></span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> r &gt;= n<span class="number">-1</span> :</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">return</span> step</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2020-02-11T17:12:15.913Z" itemprop="dateUpdated">2020-02-11 11:12:15</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpeg" alt="isFibonacci">
+            isFibonacci
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/greedy-algorithm/" rel="tag">greedy algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/02/10/greedy%20algorithm/&title=《Greedy Algorithm》 — Hi There&pic=http://yoursite.com/img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/02/10/greedy%20algorithm/&title=《Greedy Algorithm》 — Hi There&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/02/10/greedy%20algorithm/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Greedy Algorithm》 — Hi There&url=http://yoursite.com/2020/02/10/greedy%20algorithm/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/02/10/greedy%20algorithm/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2020/02/10/Informed-search/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Informed search</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'true';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        Total unique visitors：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        Total page views：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>isFibonacci &copy; 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/02/10/greedy%20algorithm/&title=《Greedy Algorithm》 — Hi There&pic=http://yoursite.com/img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/02/10/greedy%20algorithm/&title=《Greedy Algorithm》 — Hi There&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/02/10/greedy%20algorithm/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Greedy Algorithm》 — Hi There&url=http://yoursite.com/2020/02/10/greedy%20algorithm/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/02/10/greedy%20algorithm/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2020/02/10/greedy%20algorithm/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'See you';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
