@@ -23,22 +23,22 @@ ga('send', 'pageview');
     
     
     
-    <title>Common errors will make your program crash | Hi There | If people do not believe that mathematics is simple, it is only because they do not realize how complicated life is. – John von Neumann.</title>
+    <title>Inheritance and Polymorphism in C++ (2) | Hi There | If people do not believe that mathematics is simple, it is only because they do not realize how complicated life is. – John von Neumann.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="C++">
-    <meta name="description" content="Access by members of derived classesThe members of a derived class have access to the public members of the base class, but not to the private members of the base class. 123456789101112131415161718192">
+    <meta name="description" content="Overriding member functionsOverriding vs. overloadingIn overloading, functions with the same name must have different parameter types. In overriding, a derived class member function takes precedence o">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Common errors will make your program crash">
-<meta property="og:url" content="http://yoursite.com/2020/02/07/Common-error-make-your-program-crash/index.html">
+<meta property="og:title" content="Inheritance and Polymorphism in C++ (2)">
+<meta property="og:url" content="http://yoursite.com/2020/02/07/Inheritance%20and%20Polymorphism%20in%20C++%20(2)/index.html">
 <meta property="og:site_name" content="Hi There">
-<meta property="og:description" content="Access by members of derived classesThe members of a derived class have access to the public members of the base class, but not to the private members of the base class. 123456789101112131415161718192">
+<meta property="og:description" content="Overriding member functionsOverriding vs. overloadingIn overloading, functions with the same name must have different parameter types. In overriding, a derived class member function takes precedence o">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-07T22:56:00.000Z">
-<meta property="article:modified_time" content="2020-02-11T14:13:04.853Z">
+<meta property="article:modified_time" content="2020-02-11T18:22:17.857Z">
 <meta property="article:author" content="isFibonacci">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
@@ -136,7 +136,7 @@ ga('send', 'pageview');
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Common errors will make your program crash</div>
+        <div class="flex-col header-title ellipsis">Inheritance and Polymorphism in C++ (2)</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -158,7 +158,7 @@ ga('send', 'pageview');
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Common errors will make your program crash</h1>
+        <h1 class="title">Inheritance and Polymorphism in C++ (2)</h1>
         <h5 class="subtitle">
             
                 <time datetime="2020-02-07T22:56:00.000Z" itemprop="datePublished" class="page-time">
@@ -166,7 +166,7 @@ ga('send', 'pageview');
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Program-language/">Program language</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Program-Language/">Program Language</a></li></ul>
 
             
         </h5>
@@ -183,21 +183,21 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Access-by-members-of-derived-classes"><span class="post-toc-number">1.</span> <span class="post-toc-text">Access by members of derived classes</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Overriding-member-functions"><span class="post-toc-number">2.</span> <span class="post-toc-text">Overriding member functions</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Polymorphism-and-virtual-member-functions"><span class="post-toc-number">3.</span> <span class="post-toc-text">Polymorphism and virtual member functions</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Overriding-member-functions"><span class="post-toc-number">1.</span> <span class="post-toc-text">Overriding member functions</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Overriding-vs-overloading"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Overriding vs. overloading</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Polymorphism-and-virtual-member-functions"><span class="post-toc-number">2.</span> <span class="post-toc-text">Polymorphism and virtual member functions</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#compile-time-polymorphism"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">compile-time polymorphism</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#runtime-polymorphism"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">runtime polymorphism</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Virtual-functions"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">Virtual functions</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Pure-virtual-functions"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">Pure virtual functions</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-Common-error-make-your-program-crash"
+<article id="post-Inheritance and Polymorphism in C++ (2)"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Common errors will make your program crash</h1>
+        <h1 class="post-card-title">Inheritance and Polymorphism in C++ (2)</h1>
         <div class="post-meta">
             <time class="post-time" title="2020-02-07 16:56:00" datetime="2020-02-07T22:56:00.000Z"  itemprop="datePublished">2020-02-07</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Program-language/">Program language</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Program-Language/">Program Language</a></li></ul>
 
 
 
@@ -209,15 +209,7 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h2 id="Access-by-members-of-derived-classes"><a href="#Access-by-members-of-derived-classes" class="headerlink" title="Access by members of derived classes"></a>Access by members of derived classes</h2><p>The members of a derived class have access to the public members of the base class, but not to the private members of the base class.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Business</span> &#123;</span></span><br><span class="line">   <span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">       ...</span><br><span class="line"></span><br><span class="line">   <span class="keyword">private</span>:</span><br><span class="line">      <span class="built_in">string</span> name;</span><br><span class="line">      <span class="built_in">string</span> address;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Restaurant</span> :</span> <span class="keyword">public</span> Business &#123;</span><br><span class="line">   <span class="keyword">public</span>:</span><br><span class="line">    </span><br><span class="line">       ...</span><br><span class="line"></span><br><span class="line">       <span class="function"><span class="keyword">void</span> <span class="title">DisplayRestaurant</span><span class="params">()</span> </span>&#123;</span><br><span class="line">         <span class="built_in">cout</span> &lt;&lt; name &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">         <span class="built_in">cout</span> &lt;&lt; address &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">         <span class="built_in">cout</span> &lt;&lt; <span class="string">" Rating: "</span> &lt;&lt; rating &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">       &#125;</span><br><span class="line">   <span class="keyword">private</span>:</span><br><span class="line">      <span class="keyword">int</span> rating;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>Solution :<br>A third access specifier is protected, which provides access to derived classes but not by anyone else. </p>
-<p>But! Careful here : A third access specifier is protected, which provides access to derived classes but not by anyone else.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Business</span> &#123;</span></span><br><span class="line">   <span class="keyword">public</span>:    <span class="comment">// Members accessible by anyone</span></span><br><span class="line">      <span class="function"><span class="keyword">void</span> <span class="title">PrintMembers</span><span class="params">()</span></span>;</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">protected</span>: <span class="comment">// Members accessible by self and derived classes</span></span><br><span class="line">      <span class="built_in">string</span> name;</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">private</span>:   <span class="comment">// Members accessible only by self</span></span><br><span class="line">      <span class="built_in">string</span> address;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Restaurant</span> :</span> <span class="keyword">public</span> Business &#123;</span><br><span class="line">   ...</span><br><span class="line">   </span><br><span class="line">   <span class="comment">// Attempted accesses</span></span><br><span class="line">   PrintMembers();             <span class="comment">// OK</span></span><br><span class="line">   name = <span class="string">"Gyro Hero"</span>;         <span class="comment">// OK    ("protected" above made this possible)</span></span><br><span class="line">   address = <span class="string">"5 Fifth St"</span>;     <span class="comment">// ERROR</span></span><br><span class="line">   </span><br><span class="line">   ...</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   ...</span><br><span class="line">   </span><br><span class="line">   Business business;</span><br><span class="line">   Restaurant restaurant;</span><br><span class="line">   </span><br><span class="line">   ...</span><br><span class="line">   </span><br><span class="line">   <span class="comment">// Attempted accesses</span></span><br><span class="line">   business.PrintMembers();          <span class="comment">// OK</span></span><br><span class="line">   business.name  = <span class="string">"Gyro Hero"</span>;     <span class="comment">// ERROR (protected only applies to derived classes)</span></span><br><span class="line">   business.address = <span class="string">"5 Fifth St"</span>;  <span class="comment">// ERROR</span></span><br><span class="line">   </span><br><span class="line">   restaurant.PrintMembers();         <span class="comment">// OK</span></span><br><span class="line">   restaurant.name  = <span class="string">"Gyro Hero"</span>;    <span class="comment">// ERROR</span></span><br><span class="line">   restaurant.rating = <span class="number">5</span>;  <span class="comment">// ERROR</span></span><br><span class="line">   </span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Overriding-member-functions"><a href="#Overriding-member-functions" class="headerlink" title="Overriding member functions"></a>Overriding member functions</h2><p><strong>Overriding vs. overloading :</strong></p>
-<p>In overloading, functions with the same name must have different parameter types. In overriding, a derived class member function takes precedence over a base class member function with the same name, regardless of the parameter types. Overloading is not performed if derived and base member functions have different parameter types; the member function of the derived class hides the member function of the base class.</p>
+            <h2 id="Overriding-member-functions"><a href="#Overriding-member-functions" class="headerlink" title="Overriding member functions"></a>Overriding member functions</h2><h3 id="Overriding-vs-overloading"><a href="#Overriding-vs-overloading" class="headerlink" title="Overriding vs. overloading"></a>Overriding vs. overloading</h3><p>In overloading, functions with the same name must have different parameter types. In overriding, a derived class member function takes precedence over a base class member function with the same name, regardless of the parameter types. Overloading is not performed if derived and base member functions have different parameter types; the member function of the derived class hides the member function of the base class.</p>
 <p><strong>Restaurant’s GetDescription() must be identical to Business’s GetDescription() name, return type, and parameter list.</strong></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Business</span> &#123;</span></span><br><span class="line">   <span class="keyword">public</span>:</span><br><span class="line">      ...</span><br><span class="line">      <span class="function"><span class="built_in">string</span> <span class="title">GetDescription</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> name + <span class="string">" -- "</span> + address;</span><br><span class="line">      </span><br><span class="line"></span><br><span class="line">   <span class="keyword">protected</span>:</span><br><span class="line">      <span class="built_in">string</span> name;</span><br><span class="line">      <span class="built_in">string</span> address;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Restaurant</span> :</span> <span class="keyword">public</span> Business &#123;</span><br><span class="line">   <span class="keyword">public</span>:</span><br><span class="line">      ...</span><br><span class="line">      <span class="function"><span class="built_in">string</span> <span class="title">GetDescription</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> name + <span class="string">" -- "</span> + address + </span><br><span class="line">            <span class="string">"\n  Rating: "</span> + to_string(rating);</span><br><span class="line">      </span><br><span class="line"></span><br><span class="line">   <span class="keyword">private</span>:</span><br><span class="line">      <span class="keyword">int</span> rating;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
@@ -234,24 +226,30 @@ ga('send', 'pageview');
 <li><p>Function overloading is an example of compile-time polymorphism where the compiler determines which of several identically-named functions to call based on the function’s arguments.</p>
 </li>
 </ol>
-<p><strong>compile-time polymorphism</strong><br>convert the Restaurant pointer to a Business pointer</p>
+<h3 id="compile-time-polymorphism"><a href="#compile-time-polymorphism" class="headerlink" title="compile-time polymorphism"></a>compile-time polymorphism</h3><p>convert the Restaurant pointer to a Business pointer</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DriveTo</span><span class="params">(<span class="built_in">string</span> restaurant)</span> </span>&#123;</span><br><span class="line">   <span class="built_in">cout</span> &lt;&lt; <span class="string">"Driving to "</span> &lt;&lt; restaurant &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DriveTo</span><span class="params">(Restaurant restaurant)</span> </span>&#123;</span><br><span class="line">   <span class="built_in">cout</span> &lt;&lt; <span class="string">"Driving to "</span> &lt;&lt; restaurant.GetDescription() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   DriveTo(<span class="string">"Big Mac's"</span>);  <span class="comment">// Call string version</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><strong>runtime polymorphism</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DriveTo</span><span class="params">(Business* businessPtr)</span> </span>&#123;</span><br><span class="line">   <span class="built_in">cout</span> &lt;&lt; <span class="string">"Driving to "</span> &lt;&lt; businessPtr-&gt;GetDescription() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   <span class="keyword">int</span> index;</span><br><span class="line">   <span class="built_in">vector</span>&lt;Business*&gt; businessList;</span><br><span class="line">   Business* businessPtr;</span><br><span class="line">   Restaurant* restaurantPtr;</span><br><span class="line">   ...</span><br><span class="line">   businessList.push_back(businessPtr);</span><br><span class="line">   businessList.push_back(restaurantPtr);</span><br><span class="line"></span><br><span class="line">   index = rand() % businessList.<span class="built_in">size</span>();</span><br><span class="line">   DriveTo(businessList.at(index);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="runtime-polymorphism"><a href="#runtime-polymorphism" class="headerlink" title="runtime polymorphism"></a>runtime polymorphism</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DriveTo</span><span class="params">(Business* businessPtr)</span> </span>&#123;</span><br><span class="line">   <span class="built_in">cout</span> &lt;&lt; <span class="string">"Driving to "</span> &lt;&lt; businessPtr-&gt;GetDescription() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   <span class="keyword">int</span> index;</span><br><span class="line">   <span class="built_in">vector</span>&lt;Business*&gt; businessList;</span><br><span class="line">   Business* businessPtr;</span><br><span class="line">   Restaurant* restaurantPtr;</span><br><span class="line">   ...</span><br><span class="line">   businessList.push_back(businessPtr);</span><br><span class="line">   businessList.push_back(restaurantPtr);</span><br><span class="line"></span><br><span class="line">   index = rand() % businessList.<span class="built_in">size</span>();</span><br><span class="line">   DriveTo(businessList.at(index);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>derived/base class pointer conversion :<br>a pointer to a derived class is converted to a pointer to the base class without explicit casting</strong></p>
 <p>The above statement businessList.push_back(restaurantPtr); uses derived/base class pointer conversion to convert the Restaurant pointer to a Business pointer (businessList is a vector of Business pointers).</p>
 <p>When derived/base class pointer conversion takes place, the compiler is unable to use compile-time polymorphism. </p>
-<p><strong>Virtual functions</strong></p>
-<p>A virtual function is a member function that may be overridden in a derived class and is used for runtime polymorphism.</p>
+<h3 id="Virtual-functions"><a href="#Virtual-functions" class="headerlink" title="Virtual functions"></a>Virtual functions</h3><p>A virtual function is a member function that may be overridden in a derived class and is used for runtime polymorphism.</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Business</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">   <span class="function"><span class="built_in">string</span> <span class="title">GetDescription</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> name + <span class="string">" -- "</span> + address;</span><br><span class="line">   &#125;</span><br><span class="line">   ...</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Restaurant</span> :</span> <span class="keyword">public</span> Business &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">   <span class="function"><span class="built_in">string</span> <span class="title">GetDescription</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> name + <span class="string">" -- "</span> + address +</span><br><span class="line">         <span class="string">"\n  Rating: "</span> + to_string(rating);</span><br><span class="line">   &#125;</span><br><span class="line">   ...</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   Business* businessPtr;</span><br><span class="line">   Restaurant favoriteCafe;</span><br><span class="line">   favoriteCafe.SetName(<span class="string">"Friends Cafe"</span>);</span><br><span class="line">   favoriteCafe.SetAddress(<span class="string">"500 2nd Ave"</span>);</span><br><span class="line">   favoriteCafe.SetRating(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// Point to favoriteCafe</span></span><br><span class="line">   businessPtr = &amp;favoriteCafe;</span><br><span class="line"></span><br><span class="line">   <span class="built_in">cout</span> &lt;&lt; businessPtr-&gt;GetDescription();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>businessPtr points to favoriteCafe. businessPtr-&gt;GetDesciption() calls Business GetDescription()<br>instead of Restaurant GetDescription() because runtime polymorphism does not work without virtual functions.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Business</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">   <span class="function"><span class="built_in">string</span> <span class="title">GetDescription</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> name + <span class="string">" -- "</span> + address;</span><br><span class="line">   &#125;</span><br><span class="line">   ...</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Restaurant</span> :</span> <span class="keyword">public</span> Business &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">   <span class="function"><span class="built_in">string</span> <span class="title">GetDescription</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> name + <span class="string">" -- "</span> + address +</span><br><span class="line">         <span class="string">"\n  Rating: "</span> + to_string(rating);</span><br><span class="line">   &#125;</span><br><span class="line">   ...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Business</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">   <span class="function"><span class="keyword">virtual</span> <span class="built_in">string</span> <span class="title">GetDescription</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> name + <span class="string">" -- "</span> + address;</span><br><span class="line">   &#125;</span><br><span class="line">   ...</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Restaurant</span> :</span> <span class="keyword">public</span> Business &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">   <span class="function"><span class="built_in">string</span> <span class="title">GetDescription</span><span class="params">()</span> <span class="keyword">const</span> <span class="keyword">override</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> name + <span class="string">" -- "</span> + address +</span><br><span class="line">         <span class="string">"\n  Rating: "</span> + to_string(rating);</span><br><span class="line">   &#125;</span><br><span class="line">   ...</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="built_in">vector</span>&lt;Business*&gt; businessList;</span><br><span class="line">    Business* businessPtr;</span><br><span class="line">    Restaurant* restaurantPtr;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>The “virtual” keyword makes GetDescription() a virtual function. The “override” keyword indicates that Restaurant GetDescription() overrides the base class GetDescription().</p>
 <p>Running the program with an overridden virtual function causes runtime polymorphism to call Restaurant GetDescription().</p>
-
+<p>Another way  :</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PrintDescription</span><span class="params">(Business&amp; business)</span> </span>&#123;</span><br><span class="line">   <span class="built_in">cout</span> &lt;&lt; business.GetDescription() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Runtime polymorphism only works with pointers to derived classes.</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Restaurant favoritePlace;</span><br><span class="line">favoritePlace.SetName(<span class="string">"Friends Cafe"</span>);</span><br><span class="line">favoritePlace.SetAddress(<span class="string">"500 2nd Ave"</span>);</span><br><span class="line">favoritePlace.SetRating(<span class="number">5</span>);</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; favoritePlace.GetDescription();</span><br></pre></td></tr></table></figure>
+<p>The compiler can tell from the code that a Restaurant object is calling GetDescription(), so the overridden GetDescription() is called.</p>
+<h3 id="Pure-virtual-functions"><a href="#Pure-virtual-functions" class="headerlink" title="Pure virtual functions"></a>Pure virtual functions</h3><p>A pure virtual function is a virtual function that provides no definition in the base class, and all derived classes must override the function</p>
+<p>A class that has at least one pure virtual function is known as an abstract base class. </p>
+<p>An abstract base class object cannot be declared. Ex: The variable declaration Business someBusiness; generates a syntax error if Business is an abstract base class.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Business</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">SetName</span><span class="params">(<span class="built_in">string</span> busName)</span> </span>&#123;</span><br><span class="line">      name = busName;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">SetAddress</span><span class="params">(<span class="built_in">string</span> busAddress)</span> </span>&#123;</span><br><span class="line">      address = busAddress;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">virtual</span> <span class="built_in">string</span> <span class="title">GetDescription</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> name + <span class="string">" -- "</span> + address;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">virtual</span> <span class="built_in">string</span> <span class="title">GetHours</span><span class="params">()</span> <span class="keyword">const</span> </span>= <span class="number">0</span>;     <span class="comment">// pure virtual function</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">   <span class="built_in">string</span> name;</span><br><span class="line">   <span class="built_in">string</span> address;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
         </div>
 
         <blockquote class="post-copyright">
@@ -259,7 +257,7 @@ ga('send', 'pageview');
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2020-02-11T14:13:04.853Z" itemprop="dateUpdated">2020-02-11 08:13:04</time>
+    Last updated: <time datetime="2020-02-11T18:22:17.857Z" itemprop="dateUpdated">2020-02-11 12:22:17</time>
 </span><br>
 
 
@@ -289,7 +287,7 @@ ga('send', 'pageview');
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/02/07/Common-error-make-your-program-crash/&title=《Common errors will make your program crash》 — Hi There&pic=http://yoursite.com/img/avatar.jpeg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/02/07/Inheritance%20and%20Polymorphism%20in%20C++%20(2)/&title=《Inheritance and Polymorphism in C++ (2)》 — Hi There&pic=http://yoursite.com/img/avatar.jpeg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -299,22 +297,22 @@ ga('send', 'pageview');
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/02/07/Common-error-make-your-program-crash/&title=《Common errors will make your program crash》 — Hi There&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/02/07/Inheritance%20and%20Polymorphism%20in%20C++%20(2)/&title=《Inheritance and Polymorphism in C++ (2)》 — Hi There&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/02/07/Common-error-make-your-program-crash/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/02/07/Inheritance%20and%20Polymorphism%20in%20C++%20(2)/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Common errors will make your program crash》 — Hi There&url=http://yoursite.com/2020/02/07/Common-error-make-your-program-crash/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Inheritance and Polymorphism in C++ (2)》 — Hi There&url=http://yoursite.com/2020/02/07/Inheritance%20and%20Polymorphism%20in%20C++%20(2)/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/02/07/Common-error-make-your-program-crash/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/02/07/Inheritance%20and%20Polymorphism%20in%20C++%20(2)/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -337,18 +335,18 @@ ga('send', 'pageview');
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2020/02/08/Application%20Layer/" id="post-prev" class="post-nav-link">
+      <a href="/2020/02/10/Informed-search/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Application Layer</h4>
+        <h4 class="title">Informed search</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2020/02/06/Search/" id="post-next" class="post-nav-link">
+      <a href="/2020/02/07/Inheritance%20and%20Polymorphism%20in%20C++%20(1)/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Uniformed Search</h4>
+        <h4 class="title">Inheritance and Polymorphism in C++ (1)</h4>
       </a>
     </div>
   
@@ -431,7 +429,7 @@ ga('send', 'pageview');
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/02/07/Common-error-make-your-program-crash/&title=《Common errors will make your program crash》 — Hi There&pic=http://yoursite.com/img/avatar.jpeg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/02/07/Inheritance%20and%20Polymorphism%20in%20C++%20(2)/&title=《Inheritance and Polymorphism in C++ (2)》 — Hi There&pic=http://yoursite.com/img/avatar.jpeg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -441,22 +439,22 @@ ga('send', 'pageview');
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/02/07/Common-error-make-your-program-crash/&title=《Common errors will make your program crash》 — Hi There&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/02/07/Inheritance%20and%20Polymorphism%20in%20C++%20(2)/&title=《Inheritance and Polymorphism in C++ (2)》 — Hi There&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/02/07/Common-error-make-your-program-crash/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/02/07/Inheritance%20and%20Polymorphism%20in%20C++%20(2)/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Common errors will make your program crash》 — Hi There&url=http://yoursite.com/2020/02/07/Common-error-make-your-program-crash/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Inheritance and Polymorphism in C++ (2)》 — Hi There&url=http://yoursite.com/2020/02/07/Inheritance%20and%20Polymorphism%20in%20C++%20(2)/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/02/07/Common-error-make-your-program-crash/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/02/07/Inheritance%20and%20Polymorphism%20in%20C++%20(2)/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -467,7 +465,7 @@ ga('send', 'pageview');
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2020/02/07/Common-error-make-your-program-crash/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2020/02/07/Inheritance%20and%20Polymorphism%20in%20C++%20(2)/" alt="微信分享二维码">
 </div>
 
 
