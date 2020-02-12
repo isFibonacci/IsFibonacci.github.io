@@ -30,18 +30,20 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="C++">
-    <meta name="description" content="Abstract classes: Introduction (generic)Object-oriented programming (OOP) :  Classes Inheritance Abstract classes">
+    <meta name="description" content="Abstract classes: Introduction (generic)Object-oriented programming (OOP) :  Classes Inheritance Abstract classes  Abstract classes A pure virtual function is a virtual function that is not implemente">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Inheritance and Polymorphism in C++ (3)">
 <meta property="og:url" content="http://yoursite.com/2020/02/07/Inheritance%20and%20Polymorphism%20in%20C++%20(3)/index.html">
 <meta property="og:site_name" content="Hi There">
-<meta property="og:description" content="Abstract classes: Introduction (generic)Object-oriented programming (OOP) :  Classes Inheritance Abstract classes">
+<meta property="og:description" content="Abstract classes: Introduction (generic)Object-oriented programming (OOP) :  Classes Inheritance Abstract classes  Abstract classes A pure virtual function is a virtual function that is not implemente">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybpgy1gbt2hp0or9j30ga03i74m.jpg">
 <meta property="article:published_time" content="2020-02-07T22:56:00.000Z">
-<meta property="article:modified_time" content="2020-02-11T18:21:39.155Z">
+<meta property="article:modified_time" content="2020-02-11T19:24:33.532Z">
 <meta property="article:author" content="isFibonacci">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/0082zybpgy1gbt2hp0or9j30ga03i74m.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="Hi There" href="/atom.xml">
     
@@ -108,6 +110,13 @@ ga('send', 'pageview');
               <a href="https://github.com/isfibonacci" target="_blank" >
                 <i class="icon icon-lg icon-github"></i>
                 Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.linkedin.com/in/xingwang-cheng-052499171/" target="_blank" rel="noopener"  >
+                <i class="icon icon-lg icon-linkedin"></i>
+                LinkedIn
               </a>
             </li>
         
@@ -190,7 +199,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Abstract-classes-Introduction-generic"><span class="post-toc-number">1.</span> <span class="post-toc-text">Abstract classes: Introduction (generic)</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Abstract-classes-Introduction-generic"><span class="post-toc-number">1.</span> <span class="post-toc-text">Abstract classes: Introduction (generic)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Abstract-classes"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Abstract classes</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Is-a-versus-has-a-relationships"><span class="post-toc-number">2.</span> <span class="post-toc-text">Is-a versus has-a relationships</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UML"><span class="post-toc-number">3.</span> <span class="post-toc-text">UML</span></a></li></ol>
         </nav>
     </aside>
 
@@ -222,6 +231,34 @@ ga('send', 'pageview');
 <li>Inheritance</li>
 <li>Abstract classes</li>
 </ol>
+<h3 id="Abstract-classes"><a href="#Abstract-classes" class="headerlink" title="Abstract classes"></a>Abstract classes</h3><ol>
+<li><p>A pure virtual function is a virtual function that is not implemented in the base class, thus all derived classes must override the function. A pure virtual function is declared with the “virtual” keyword and is assigned with 0. Ex: virtual double ComputeArea() const = 0; declares a pure virtual function ComputeArea().</p>
+</li>
+<li><p>An abstract class is a class that cannot be instantiated as an object, but is the superclass for a subclass and specifies how the subclass must be implemented. Any class with one or more pure virtual functions is abstract.</p>
+</li>
+<li><p>A concrete class is a class that is not abstract, and hence can be instantiated.</p>
+</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Shape</span> &#123;</span></span><br><span class="line">   <span class="keyword">protected</span>:</span><br><span class="line">      Point <span class="built_in">position</span>;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">public</span>:</span><br><span class="line">      <span class="keyword">virtual</span> ~Shape() &#123; &#125;</span><br><span class="line">      <span class="function"><span class="keyword">virtual</span> <span class="keyword">double</span> <span class="title">ComputeArea</span><span class="params">()</span> <span class="keyword">const</span> </span>= <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">      <span class="function">Point <span class="title">GetPosition</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="built_in">position</span>;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="function"><span class="keyword">void</span> <span class="title">SetPosition</span><span class="params">(Point newPosition)</span> </span>&#123;</span><br><span class="line">         <span class="built_in">position</span> = newPosition;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="function"><span class="keyword">void</span> <span class="title">MovePositionRelative</span><span class="params">(Point otherPosition)</span> </span>&#123;</span><br><span class="line">         <span class="keyword">double</span> x = <span class="built_in">position</span>.GetX() + otherPosition.GetX();</span><br><span class="line">         <span class="keyword">double</span> y = <span class="built_in">position</span>.GetY() + otherPosition.GetY();</span><br><span class="line"></span><br><span class="line">         <span class="built_in">position</span>.SetX(x);</span><br><span class="line">         <span class="built_in">position</span>.SetY(y);</span><br><span class="line">      &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span>* argv[])</span> </span>&#123;</span><br><span class="line">   Shape* shape = <span class="keyword">new</span> Shape(); <span class="comment">// &lt;- ERROR!!!</span></span><br><span class="line">   ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Omitting ComputeArea() makes the Circle class abstract. To be concrete, all pure virtual functions from the superclass, Shape, must be implemented.</strong></p>
+<p><strong>In Shape.h</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Shape</span> &#123;</span> </span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">      <span class="keyword">virtual</span> ~Shape() &#123; &#125;</span><br><span class="line">      <span class="function"><span class="keyword">virtual</span> <span class="keyword">double</span> <span class="title">ComputeArea</span><span class="params">()</span> <span class="keyword">const</span> </span>= <span class="number">0</span>;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>In Circle.h</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Circle</span> :</span> <span class="keyword">public</span> Shape &#123;</span><br><span class="line">   <span class="keyword">private</span>:</span><br><span class="line">      <span class="keyword">double</span> radius;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">public</span>:</span><br><span class="line">      Circle(Point center, <span class="keyword">double</span> radius) &#123;</span><br><span class="line">         <span class="keyword">this</span>-&gt;radius = radius;</span><br><span class="line">         <span class="keyword">this</span>-&gt;<span class="built_in">position</span> = center;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="function"><span class="keyword">double</span> <span class="title">ComputeArea</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> (M_PI * <span class="built_in">pow</span>(radius, <span class="number">2</span>));</span><br><span class="line">      &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Is-a-versus-has-a-relationships"><a href="#Is-a-versus-has-a-relationships" class="headerlink" title="Is-a versus has-a relationships"></a>Is-a versus has-a relationships</h2><p><strong>Composition</strong><br>The ‘has-a’ relationship. A MotherInfo object ‘has a’ string object and ‘has a’ vector of ChildInfo objects, but no inheritance is involved.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ChildInfo</span> &#123;</span></span><br><span class="line">   <span class="built_in">string</span> firstName;</span><br><span class="line">   <span class="built_in">string</span> birthDate;</span><br><span class="line">   <span class="built_in">string</span> schoolName;</span><br><span class="line"></span><br><span class="line">   ...</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MotherInfo</span> &#123;</span></span><br><span class="line">   <span class="built_in">string</span> firstname;</span><br><span class="line">   <span class="built_in">string</span> birthDate;</span><br><span class="line">   <span class="built_in">string</span> spouseName;</span><br><span class="line">   <span class="built_in">vector</span>&lt;ChildInfo&gt; childrenData;</span><br><span class="line"></span><br><span class="line">   ...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>Inheritance</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PersonInfo</span> &#123;</span></span><br><span class="line">   <span class="built_in">string</span> firstName;</span><br><span class="line">   <span class="built_in">string</span> birthDate;</span><br><span class="line"></span><br><span class="line">   ...</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ChildInfo</span> :</span> <span class="keyword">public</span> PersonInfo &#123;</span><br><span class="line">   <span class="built_in">string</span> schoolName;</span><br><span class="line"></span><br><span class="line">   ...</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MotherInfo</span> :</span> <span class="keyword">public</span> PersonInfo &#123;</span><br><span class="line">   <span class="built_in">string</span> spouseName;</span><br><span class="line">   <span class="built_in">vector</span>&lt;ChildInfo&gt; childrenData;</span><br><span class="line"></span><br><span class="line">   ...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="UML"><a href="#UML" class="headerlink" title="UML"></a>UML</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://tva1.sinaimg.cn/large/0082zybpgy1gbt2hp0or9j30ga03i74m.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
 
         </div>
 
@@ -230,7 +267,7 @@ ga('send', 'pageview');
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2020-02-11T18:21:39.155Z" itemprop="dateUpdated">2020-02-11 12:21:39</time>
+    Last updated: <time datetime="2020-02-11T19:24:33.532Z" itemprop="dateUpdated">2020-02-11 13:24:33</time>
 </span><br>
 
 
