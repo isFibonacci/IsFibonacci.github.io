@@ -491,10 +491,10 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
     var OriginTitile = document.title, titleTime;
     document.addEventListener('visibilitychange', function() {
         if (document.hidden) {
-            document.title = 'See you';
+            document.title = 'ヾ(￣▽￣)Bye~Bye~';
             clearTimeout(titleTime);
         } else {
-            document.title = '(つェ⊂)';
+            document.title = 'ヾ(=^▽^=)ノ Hello';
             titleTime = setTimeout(function() {
                 document.title = OriginTitile;
             },2000);
