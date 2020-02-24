@@ -38,7 +38,7 @@ ga('send', 'pageview');
 <meta property="og:description" content="【模版】(https:&#x2F;&#x2F;www.acwing.com&#x2F;blog&#x2F;content&#x2F;277&#x2F;) 69. Sqrt(x)12345678910Example 1:Input: 4Output: 2Example 2:Input: 8Output: 2Explanation: The square root of 8 is 2.82842..., and since              the d">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-14T23:55:00.000Z">
-<meta property="article:modified_time" content="2020-02-24T05:31:22.610Z">
+<meta property="article:modified_time" content="2020-02-24T06:07:13.919Z">
 <meta property="article:author" content="isFibonacci">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="leetcode">
@@ -257,6 +257,9 @@ ga('send', 'pageview');
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. nums[i] &gt; i+1 must exist a peak at right, otherwise it is acending, </span><br><span class="line">   then the most right is peak</span><br><span class="line">   nums[i-1] &gt; nums[i], must exist a peak at left, otherwise it is decreasing, </span><br><span class="line">   then the most left is peak</span><br></pre></td></tr></table></figure>
 
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findPeakElement</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (nums.<span class="built_in">size</span>() == <span class="number">1</span> || nums[<span class="number">0</span>] &gt; nums[<span class="number">1</span>] ) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>, r = nums.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (l &lt; r) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = l + r  + <span class="number">1</span>&gt;&gt; <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (nums[mid] &gt; nums[mid<span class="number">-1</span>]) l = mid;</span><br><span class="line">        <span class="keyword">else</span> r = mid - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
 
         </div>
 
@@ -265,7 +268,7 @@ ga('send', 'pageview');
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2020-02-24T05:31:22.610Z" itemprop="dateUpdated">2020-02-23 23:31:22</time>
+    Last updated: <time datetime="2020-02-24T06:07:13.919Z" itemprop="dateUpdated">2020-02-24 00:07:13</time>
 </span><br>
 
 
@@ -345,9 +348,9 @@ ga('send', 'pageview');
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2020/02/14/title:%20Hash%20Table%20(1)/" id="post-next" class="post-nav-link">
+      <a href="/2020/02/14/title:%20binary-stack-queue%20(1)/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Hash Table (1)</h4>
+        <h4 class="title">binary-stack-queue (1)</h4>
       </a>
     </div>
   
