@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'true', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- End Google Analytics -->
+
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Heap | Hi There | If people do not believe that mathematics is simple, it is only because they do not realize how complicated life is. – John von Neumann.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Data Structure">
+    <meta name="description" content="AcWing 838. 堆排序123451. Insert : hedp[++size] &#x3D; x; up(size) O(logn)2. Min : heap[1]3. Delete min : heap[1] &#x3D; heap[size]; size--; down(1);4. Delete any : heap[k] &#x3D; heap[size]; size--; dow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Heap">
+<meta property="og:url" content="http://yoursite.com/2020/02/01/title:%20Heap/index.html">
+<meta property="og:site_name" content="Hi There">
+<meta property="og:description" content="AcWing 838. 堆排序123451. Insert : hedp[++size] &#x3D; x; up(size) O(logn)2. Min : heap[1]3. Delete min : heap[1] &#x3D; heap[size]; size--; down(1);4. Delete any : heap[k] &#x3D; heap[size]; size--; dow">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-01T23:55:00.000Z">
+<meta property="article:modified_time" content="2020-02-23T15:39:07.941Z">
+<meta property="article:author" content="isFibonacci">
+<meta property="article:tag" content="Data Structure">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="Hi There" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/1.jpeg">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/img/avatar.jpeg" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">isFibonacci</h5>
+          <a href="mailto:xwcehg497@gmail.com" title="xwcehg497@gmail.com" class="mail">xwcehg497@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/isfibonacci" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/isfibonacci" target="_blank" rel="noopener"  >
+                <i class="icon icon-lg icon-code"></i>
+                Project
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.linkedin.com/in/xingwang-cheng-052499171/" target="_blank" rel="noopener"  >
+                <i class="icon icon-lg icon-linkedin"></i>
+                LinkedIn
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.weibo.com/5512263576/profile?topnav=1&wvr=6" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.zhihu.com/people/kujira-89" target="_blank" rel="noopener"  >
+                <i class="icon icon-lg icon-link"></i>
+                Zhihu
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://twitter.com/InsightAha" target="_blank" rel="noopener"  >
+                <i class="icon icon-lg icon-twitter"></i>
+                Twitter
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Heap</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Heap</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-02-01T23:55:00.000Z" itemprop="datePublished" class="page-time">
+  2020-02-01
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/yxcNb/">yxcNb</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#AcWing-838-堆排序"><span class="post-toc-number">1.</span> <span class="post-toc-text">AcWing 838. 堆排序</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#839-模拟堆"><span class="post-toc-number">2.</span> <span class="post-toc-text">839. 模拟堆</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#692-Top-K-Frequent-Words"><span class="post-toc-number">3.</span> <span class="post-toc-text">692. Top K Frequent Words</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#295-Find-Median-from-Data-Stream"><span class="post-toc-number">4.</span> <span class="post-toc-text">295. Find Median from Data Stream</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#352-Data-Stream-as-Disjoint-Intervals"><span class="post-toc-number">5.</span> <span class="post-toc-text">352. Data Stream as Disjoint Intervals</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-title: Heap"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Heap</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-02-01 17:55:00" datetime="2020-02-01T23:55:00.000Z"  itemprop="datePublished">2020-02-01</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/yxcNb/">yxcNb</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="AcWing-838-堆排序"><a href="#AcWing-838-堆排序" class="headerlink" title="AcWing 838. 堆排序"></a><a href="https://www.acwing.com/problem/content/840/" target="_blank" rel="noopener">AcWing 838. 堆排序</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. Insert : hedp[++size] &#x3D; x; up(size) O(logn)</span><br><span class="line">2. Min : heap[1]</span><br><span class="line">3. Delete min : heap[1] &#x3D; heap[size]; size--; down(1);</span><br><span class="line">4. Delete any : heap[k] &#x3D; heap[size]; size--; down(k); up(k);</span><br><span class="line">5. heap[k] &#x3D; x; down(k); up(k);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">100010</span>;</span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"><span class="keyword">int</span> h[N], <span class="built_in">size</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">down</span><span class="params">(<span class="keyword">int</span> root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> <span class="built_in">min</span> = root;</span><br><span class="line">    <span class="keyword">if</span> (root*<span class="number">2</span> &lt;= <span class="built_in">size</span> &amp;&amp; h[root*<span class="number">2</span>] &lt; h[<span class="built_in">min</span>]) <span class="built_in">min</span> = root*<span class="number">2</span>; <span class="comment">// left</span></span><br><span class="line">    <span class="keyword">if</span> (root*<span class="number">2</span> + <span class="number">1</span> &lt;= <span class="built_in">size</span> &amp;&amp; h[root*<span class="number">2</span>+<span class="number">1</span>] &lt; h[<span class="built_in">min</span>]) <span class="built_in">min</span> = root*<span class="number">2</span> + <span class="number">1</span>; <span class="comment">//right</span></span><br><span class="line">    <span class="keyword">if</span> (root != <span class="built_in">min</span>) &#123;</span><br><span class="line">        swap(h[root], h[<span class="built_in">min</span>]);</span><br><span class="line">        down(<span class="built_in">min</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;h[i]);</span><br><span class="line">    <span class="built_in">size</span> = n;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = n / <span class="number">2</span>; i; i--) down(i);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (m--) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>, h[<span class="number">1</span>]);</span><br><span class="line">        h[<span class="number">1</span>] = h[<span class="built_in">size</span>];</span><br><span class="line">        <span class="built_in">size</span>--;</span><br><span class="line">        down(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="839-模拟堆"><a href="#839-模拟堆" class="headerlink" title="839. 模拟堆"></a><a href="https://www.acwing.com/problem/content/841/" target="_blank" rel="noopener">839. 模拟堆</a></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">heap_swap</span><span class="params">(itn a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// heap pointer : index map to element </span></span><br><span class="line">    <span class="comment">// pointer heap : map index</span></span><br><span class="line">    <span class="comment">// ph[j] = k, hp[k] = j -&gt; ph[hp[k]]</span></span><br><span class="line">    swap(ph[hp[a]], ph[hp[b]]); </span><br><span class="line">    swap(hp[a], hp[b]); <span class="comment">//index </span></span><br><span class="line">    swap(h[a], h[b]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="692-Top-K-Frequent-Words"><a href="#692-Top-K-Frequent-Words" class="headerlink" title="692. Top K Frequent Words"></a><a href="https://leetcode.com/problems/top-k-frequent-words/" target="_blank" rel="noopener">692. Top K Frequent Words</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Example 1:</span><br><span class="line">Input: [&quot;i&quot;, &quot;love&quot;, &quot;leetcode&quot;, &quot;i&quot;, &quot;love&quot;, &quot;coding&quot;], k &#x3D; 2</span><br><span class="line">Output: [&quot;i&quot;, &quot;love&quot;]</span><br><span class="line">Explanation: &quot;i&quot; and &quot;love&quot; are the two most frequent words.</span><br><span class="line">    Note that &quot;i&quot; comes before &quot;love&quot; due to a lower alphabetical order.</span><br><span class="line">Example 2:</span><br><span class="line">Input: [&quot;the&quot;, &quot;day&quot;, &quot;is&quot;, &quot;sunny&quot;, &quot;the&quot;, &quot;the&quot;, &quot;the&quot;, &quot;sunny&quot;, &quot;is&quot;, &quot;is&quot;], k &#x3D; 4</span><br><span class="line">Output: [&quot;the&quot;, &quot;is&quot;, &quot;sunny&quot;, &quot;day&quot;]</span><br><span class="line">Explanation: &quot;the&quot;, &quot;is&quot;, &quot;sunny&quot; and &quot;day&quot; are the four most frequent words,</span><br><span class="line">    with the number of occurrence being 4, 3, 2 and 1 respectively.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. Priority queue is max-heap, -item.second -&gt; min-heap</span><br><span class="line">    bc pop the top, will remove the most frequency, but we want </span><br><span class="line">    the most frequency</span><br><span class="line">2. if the heap is full, pop out the worest.</span><br><span class="line">3. WARNING : priority queue. if the frequency is the same, choose the bigger alphabet</span><br><span class="line">    but we want lower alphabetical order comes first.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; <span class="title">topKFrequent</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; words, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;<span class="built_in">string</span>, <span class="keyword">int</span>&gt; hash; <span class="comment">//&lt;frequency, string&gt;</span></span><br><span class="line">    <span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt; obj; <span class="comment">// same above, for push into heap</span></span><br><span class="line">    priority_queue&lt;obj&gt; heap;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> <span class="keyword">word</span> : words) hash[<span class="keyword">word</span>]++;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> item : hash) &#123;</span><br><span class="line">        <span class="comment">// make pair, -frequency is the lowest in the max-heap</span></span><br><span class="line">        <span class="function">obj <span class="title">temp</span><span class="params">(-item.second, item.first)</span></span>;</span><br><span class="line">        heap.push(temp);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// if full, pop</span></span><br><span class="line">        <span class="keyword">if</span> (heap.<span class="built_in">size</span>() &gt; k) heap.pop();</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 3. add to res</span></span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; <span class="title">res</span><span class="params">(k)</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// -frequency is the max, top is the min, so reverse</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = k<span class="number">-1</span> ; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">        res[i] = heap.top().second;</span><br><span class="line">        heap.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="295-Find-Median-from-Data-Stream"><a href="#295-Find-Median-from-Data-Stream" class="headerlink" title="295. Find Median from Data Stream"></a><a href="https://leetcode.com/problems/find-median-from-data-stream/" target="_blank" rel="noopener">295. Find Median from Data Stream</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Median is the middle value in an ordered integer list. If the size of the list is even, there is no middle value. So the median is the mean of the two middle value.</span><br><span class="line"></span><br><span class="line">For example,</span><br><span class="line">[2,3,4], the median is 3</span><br><span class="line"></span><br><span class="line">[2,3], the median is (2 + 3) &#x2F; 2 &#x3D; 2.5</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">up : min-heap, down : max-heap;</span><br><span class="line">if x &gt;&#x3D; down.top(), insert up, if x &lt; down.top(), insert down</span><br><span class="line">    7   8</span><br><span class="line">     \ &#x2F;</span><br><span class="line">      6</span><br><span class="line">      5</span><br><span class="line">    &#x2F;   \</span><br><span class="line">    3    4</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MedianFinder</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/** initialize your data structure here. */</span></span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;, greater&lt;<span class="keyword">int</span>&gt;&gt; up; <span class="comment">//min-</span></span><br><span class="line">    priority_queue&lt;<span class="keyword">int</span>&gt; down; <span class="comment">// max-heap</span></span><br><span class="line">    MedianFinder() &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">addNum</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (down.empty() || num &gt;= down.top()) up.push(num);</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// every time also add to up, so we only need to maintiain one side</span></span><br><span class="line">            down.push(num);</span><br><span class="line">            up.push(down.top());</span><br><span class="line">            down.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (up.<span class="built_in">size</span>() &gt; down.<span class="built_in">size</span>()+<span class="number">1</span>) &#123;</span><br><span class="line">            down.push(up.top());</span><br><span class="line">            up.pop();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">findMedian</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// odd</span></span><br><span class="line">        <span class="keyword">if</span> (down.<span class="built_in">size</span>() + up.<span class="built_in">size</span>() &amp; <span class="number">1</span>) <span class="keyword">return</span> up.top();</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> ( down.top() + up.top()) / <span class="number">2.0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="352-Data-Stream-as-Disjoint-Intervals"><a href="#352-Data-Stream-as-Disjoint-Intervals" class="headerlink" title="352. Data Stream as Disjoint Intervals"></a><a href="https://leetcode.com/problems/data-stream-as-disjoint-intervals/" target="_blank" rel="noopener">352. Data Stream as Disjoint Intervals</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Given a data stream input of non-negative integers a1, a2, ..., an, ..., summarize the numbers seen so far as a list of disjoint intervals.</span><br><span class="line"></span><br><span class="line">For example, suppose the integers from the data stream are 1, 3, 7, 2, 6, ..., then the summary will be:</span><br><span class="line"></span><br><span class="line">[1, 1]</span><br><span class="line">[1, 1], [3, 3]</span><br><span class="line">[1, 1], [3, 3], [7, 7]</span><br><span class="line">[1, 3], [7, 7]</span><br><span class="line">[1, 3], [6, 7]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SummaryRanges</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/** Initialize your data structure here. */</span></span><br><span class="line">    <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; L, R;</span><br><span class="line">    SummaryRanges() &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">addNum</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (L.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            <span class="keyword">auto</span> it = L.lower_bound(x);</span><br><span class="line">            <span class="keyword">if</span> (it != L.<span class="built_in">end</span>() &amp;&amp; it -&gt;second &lt;= x) <span class="keyword">return</span>; <span class="comment">// x 已经在某个区间</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> left = L.count(x<span class="number">-1</span>), right = R.count(x+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span> (left &amp;&amp; right) &#123;</span><br><span class="line">            R[L[x<span class="number">-1</span>]] = R[x+<span class="number">1</span>];</span><br><span class="line">            L[R[x+<span class="number">1</span>]] = L[x<span class="number">-1</span>];</span><br><span class="line">            L.erase(x<span class="number">-1</span>), R.erase(x+<span class="number">1</span>);</span><br><span class="line">            </span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (left) &#123;</span><br><span class="line">            R[L[x<span class="number">-1</span>]] = x;</span><br><span class="line">            L[x] = L[x<span class="number">-1</span>];</span><br><span class="line">            L.erase(x<span class="number">-1</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (right) &#123;</span><br><span class="line">            L[R[x + <span class="number">1</span>]] = x;</span><br><span class="line">            R[x] = R[x + <span class="number">1</span>];</span><br><span class="line">            R.erase(x + <span class="number">1</span>);</span><br><span class="line">            </span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            R[x] = L[x] = x;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">getIntervals</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; res;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> item : R) res.push_back(&#123;item.first, item.second&#125;);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2020-02-23T15:39:07.941Z" itemprop="dateUpdated">2020-02-23 09:39:07</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpeg" alt="isFibonacci">
+            isFibonacci
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Structure/" rel="tag">Data Structure</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/02/01/title:%20Heap/&title=《Heap》 — Hi There&pic=http://yoursite.com/img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/02/01/title:%20Heap/&title=《Heap》 — Hi There&source=Computer Sicence | University of Minnesota, twin cities" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/02/01/title:%20Heap/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Heap》 — Hi There&url=http://yoursite.com/2020/02/01/title:%20Heap/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/02/01/title:%20Heap/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2020/02/05/Inheritance%20and%20Polymorphism%20in%20C++%20(1)/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Inheritance and Polymorphism in C++ (1)</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2020/02/01/title:%20%E5%B9%B6%E6%9F%A5%E9%9B%86/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">并查集</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'true';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        Total unique visitors：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        Total page views：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>isFibonacci &copy; 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/02/01/title:%20Heap/&title=《Heap》 — Hi There&pic=http://yoursite.com/img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/02/01/title:%20Heap/&title=《Heap》 — Hi There&source=Computer Sicence | University of Minnesota, twin cities" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/02/01/title:%20Heap/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Heap》 — Hi There&url=http://yoursite.com/2020/02/01/title:%20Heap/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/02/01/title:%20Heap/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2020/02/01/title:%20Heap/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'ヾ(￣▽￣)Bye~Bye~';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'ヾ(=^▽^=)ノ Hello';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

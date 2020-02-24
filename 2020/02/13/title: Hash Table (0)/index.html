@@ -38,7 +38,7 @@ ga('send', 'pageview');
 <meta property="og:description" content="1. Two Sum1234Given nums &#x3D; [2, 7, 11, 15], target &#x3D; 9,Because nums[0] + nums[1] &#x3D; 2 + 7 &#x3D; 9,return [0, 1].  1234567891011vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int t">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-13T23:55:00.000Z">
-<meta property="article:modified_time" content="2020-02-18T01:50:28.347Z">
+<meta property="article:modified_time" content="2020-02-21T02:46:23.153Z">
 <meta property="article:author" content="isFibonacci">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="leetcode">
@@ -110,6 +110,13 @@ ga('send', 'pageview');
               <a href="https://github.com/isfibonacci" target="_blank" >
                 <i class="icon icon-lg icon-github"></i>
                 Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/isfibonacci" target="_blank" rel="noopener"  >
+                <i class="icon icon-lg icon-code"></i>
+                Project
               </a>
             </li>
         
@@ -251,7 +258,7 @@ ga('send', 'pageview');
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. key is the sub string, value is the times it appear</span><br><span class="line">2. ++hash[sub] : add into hash, if it &#x3D;&#x3D; 1, so it&#39;s the second times it appear</span><br><span class="line">    since we have one sub now, and another is saved in the hash table</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; <span class="title">findRepeatedDnaSequences</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;<span class="built_in">string</span>, <span class="keyword">int</span>&gt; hash;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; res;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i + <span class="number">10</span> &lt;= s.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="built_in">string</span> sub = s.substr(i, <span class="number">10</span>);</span><br><span class="line">        <span class="keyword">if</span> (hash[sub] == <span class="number">1</span>) &#123;</span><br><span class="line">            res.push_back(sub);</span><br><span class="line">            hash[sub] += <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            hash[sub]++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; <span class="title">findRepeatedDnaSequences</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;<span class="built_in">string</span>, <span class="keyword">int</span>&gt; hash;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; res;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i + <span class="number">10</span> &lt;= s.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="built_in">string</span> str = s.substr(i, <span class="number">10</span>);</span><br><span class="line">        hash[str]++;</span><br><span class="line">        <span class="keyword">if</span> (hash[str] == <span class="number">2</span>) res.push_back(str);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="347-Top-K-Frequent-Elements"><a href="#347-Top-K-Frequent-Elements" class="headerlink" title="347. Top K Frequent Elements"></a><a href="https://leetcode.com/problems/top-k-frequent-elements/" target="_blank" rel="noopener">347. Top K Frequent Elements</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Given a non-empty array of integers, return the k most frequent elements.</span><br><span class="line"></span><br><span class="line">Example 1:</span><br><span class="line"></span><br><span class="line">Input: nums &#x3D; [1,1,1,2,2,3], k &#x3D; 2</span><br><span class="line">Output: [1,2]</span><br><span class="line">Example 2:</span><br><span class="line"></span><br><span class="line">Input: nums &#x3D; [1], k &#x3D; 1</span><br><span class="line">Output: [1]</span><br><span class="line"></span><br><span class="line">**1 ≤ k ≤ number of unique elements.**</span><br><span class="line">**OUTPUT the k most frequency, e.g. k &#x3D; 2, two numbers, k &#x3D; 3, 3 numbers**</span><br><span class="line">**NOT K frequency**</span><br></pre></td></tr></table></figure>
 
@@ -266,7 +273,7 @@ ga('send', 'pageview');
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2020-02-18T01:50:28.347Z" itemprop="dateUpdated">2020-02-17 19:50:28</time>
+    Last updated: <time datetime="2020-02-21T02:46:23.153Z" itemprop="dateUpdated">2020-02-20 20:46:23</time>
 </span><br>
 
 
