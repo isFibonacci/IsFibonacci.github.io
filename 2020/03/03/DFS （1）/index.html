@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'true', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- End Google Analytics -->
+
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>DFS （1） | Hi There | If people do not believe that mathematics is simple, it is only because they do not realize how complicated life is. – John von Neumann.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="-Data Structure">
+    <meta name="description" content="90. Subsets II12345671, 2, 2, 2, 3, 31: 0, 12: 0, 1, 2, 33: 0, 1, 2result:&amp;#123; [], [1], [2], [3], [1,2], [1,3]...[1,2,2,2,3,3]&amp;#125;  12345678910111213141516171819202122232425262728vector&lt;vector&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DFS （1）">
+<meta property="og:url" content="http://yoursite.com/2020/03/03/DFS%20%EF%BC%881%EF%BC%89/index.html">
+<meta property="og:site_name" content="Hi There">
+<meta property="og:description" content="90. Subsets II12345671, 2, 2, 2, 3, 31: 0, 12: 0, 1, 2, 33: 0, 1, 2result:&amp;#123; [], [1], [2], [3], [1,2], [1,3]...[1,2,2,2,3,3]&amp;#125;  12345678910111213141516171819202122232425262728vector&lt;vector&amp;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-03T23:55:00.000Z">
+<meta property="article:modified_time" content="2020-03-06T19:04:45.135Z">
+<meta property="article:author" content="isFibonacci">
+<meta property="article:tag" content="-Data Structure">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="Hi There" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/1.jpeg">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/img/avatar.jpeg" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">isFibonacci</h5>
+          <a href="mailto:xwcehg497@gmail.com" title="xwcehg497@gmail.com" class="mail">xwcehg497@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/isfibonacci" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/isfibonacci" target="_blank" rel="noopener"  >
+                <i class="icon icon-lg icon-code"></i>
+                Project
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.linkedin.com/in/xingwang-cheng-052499171/" target="_blank" rel="noopener"  >
+                <i class="icon icon-lg icon-linkedin"></i>
+                LinkedIn
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.weibo.com/5512263576/profile?topnav=1&wvr=6" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.zhihu.com/people/kujira-89" target="_blank" rel="noopener"  >
+                <i class="icon icon-lg icon-link"></i>
+                Zhihu
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://twitter.com/InsightAha" target="_blank" rel="noopener"  >
+                <i class="icon icon-lg icon-twitter"></i>
+                Twitter
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">DFS （1）</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">DFS （1）</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-03-03T23:55:00.000Z" itemprop="datePublished" class="page-time">
+  2020-03-03
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/yxcNb/">yxcNb</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#90-Subsets-II"><span class="post-toc-number">1.</span> <span class="post-toc-text">90. Subsets II</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#216-Combination-Sum-III"><span class="post-toc-number">2.</span> <span class="post-toc-text">216. Combination Sum III</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#52-N-Queens-II"><span class="post-toc-number">3.</span> <span class="post-toc-text">52. N-Queens II</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#37-Sudoku-Solver"><span class="post-toc-number">4.</span> <span class="post-toc-text">37. Sudoku Solver</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#473-Matchsticks-to-Square"><span class="post-toc-number">5.</span> <span class="post-toc-text">473. Matchsticks to Square</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-DFS （1）"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">DFS （1）</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-03-03 17:55:00" datetime="2020-03-03T23:55:00.000Z"  itemprop="datePublished">2020-03-03</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/yxcNb/">yxcNb</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="90-Subsets-II"><a href="#90-Subsets-II" class="headerlink" title="90. Subsets II"></a><a href="https://leetcode.com/problems/subsets-ii/" target="_blank" rel="noopener">90. Subsets II</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1, 2, 2, 2, 3, 3</span><br><span class="line"></span><br><span class="line">1: 0, 1</span><br><span class="line">2: 0, 1, 2, 3</span><br><span class="line">3: 0, 1, 2</span><br><span class="line">result:</span><br><span class="line">&#123; [], [1], [2], [3], [1,2], [1,3]...[1,2,2,2,3,3]&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; ans;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; path;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">subsetsWithDup</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    sort(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">    dfs(nums, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp; nums, <span class="keyword">int</span> level)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (level == nums.<span class="built_in">size</span>()) &#123;</span><br><span class="line">        ans.push_back(path);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// count number of current num</span></span><br><span class="line">    <span class="keyword">int</span> k = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (level+ k &lt; nums.<span class="built_in">size</span>() &amp;&amp; nums[level+k] == nums[level]) k++;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// ???</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= k; i++) &#123;</span><br><span class="line">        dfs(nums, level+k); <span class="comment">// skip the duplicate num?</span></span><br><span class="line">        path.push_back(nums[level]);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// recover</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= k; i++) path.pop_back();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="216-Combination-Sum-III"><a href="#216-Combination-Sum-III" class="headerlink" title="216. Combination Sum III"></a><a href="https://leetcode.com/problems/combination-sum-iii/" target="_blank" rel="noopener">216. Combination Sum III</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Input: k &#x3D; 3, n &#x3D; 7</span><br><span class="line">Output: [[1,2,4]]</span><br><span class="line">Input: k &#x3D; 3, n &#x3D; 9</span><br><span class="line">Output: [[1,2,6], [1,3,5], [2,3,4]]</span><br><span class="line">n &#x3D; 3 : </span><br><span class="line"></span><br><span class="line">[1, 1,1]</span><br><span class="line">[2,2,2,]</span><br><span class="line">...</span><br><span class="line">[9,9,9]</span><br><span class="line">dfs(枚举到的第几个数字，开始枚举的位置，当前选择的所有数的和)</span><br><span class="line"></span><br><span class="line">i~9 起码有k个数，9 - i + 1 &gt;&#x3D; k &#x3D;&gt; 10 - k &gt;&#x3D; i;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; ans;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; path;</span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">combinationSum3</span><span class="params">(<span class="keyword">int</span> k, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// enumerate ith number, start position of enumerate, cur sum;</span></span><br><span class="line">    dfs(k, <span class="number">1</span>, n); <span class="comment">// from end</span></span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> k, <span class="keyword">int</span> start, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (!k) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!n) ans.push_back(path);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// enumerate each positon</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = start; i &lt;= <span class="number">9</span>; i++) &#123;</span><br><span class="line">        path.push_back(i);</span><br><span class="line">        dfs(k<span class="number">-1</span>, i+<span class="number">1</span>, n-i);</span><br><span class="line">        path.pop_back();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="52-N-Queens-II"><a href="#52-N-Queens-II" class="headerlink" title="52. N-Queens II"></a><a href="https://leetcode.com/problems/n-queens-ii/" target="_blank" rel="noopener">52. N-Queens II</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.enumerate each row</span><br><span class="line">2. each col, diagonal can only have one queen</span><br><span class="line"> y &#x3D; x+b</span><br><span class="line"> x+y &#x3D;&gt; row+col[0+2] &#x3D; [1+1] &#x3D; [2+0]</span><br><span class="line"> x-y+n &#x3D;&gt; row+col-n &#x3D; [0-0+3] &#x3D; [1-1+3] &#x3D; [2-2+3]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> ans, n;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt; col, d, ud;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">totalNQueens</span><span class="params">(<span class="keyword">int</span> _n)</span> </span>&#123;</span><br><span class="line">    n = _n; <span class="comment">// golbal</span></span><br><span class="line">    col = <span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt;(n);</span><br><span class="line">    d = ud = <span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt;(n*<span class="number">2</span>);</span><br><span class="line">    dfs(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> level)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (level == n) &#123;</span><br><span class="line">        ans++;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!col[i] &amp;&amp; !d[level+i] &amp;&amp; !ud[level-i+n]) &#123;</span><br><span class="line">            col[i] = d[level+i] = ud[level-i+n] = <span class="literal">true</span>;</span><br><span class="line">            dfs(level+<span class="number">1</span>);</span><br><span class="line">            col[i] = d[level+i] = ud[level-i+n] = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="37-Sudoku-Solver"><a href="#37-Sudoku-Solver" class="headerlink" title="37. Sudoku Solver"></a><a href="https://leetcode.com/problems/sudoku-solver/" target="_blank" rel="noopener">37. Sudoku Solver</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">enumerate each num in </span><br><span class="line">row[9][9], col[9][9], cell[3][3][9]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> row[<span class="number">9</span>][<span class="number">9</span>] = &#123;<span class="number">0</span>&#125;, col[<span class="number">9</span>][<span class="number">9</span>] = &#123;<span class="number">0</span>&#125;, cell[<span class="number">3</span>][<span class="number">3</span>][<span class="number">9</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="comment">// [#row][num] = used/ no-use</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solveSudoku</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt;&gt;&amp; board)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">9</span>; j++) &#123;</span><br><span class="line">            <span class="keyword">char</span> c = board[i][j];</span><br><span class="line">            <span class="keyword">if</span> (c != <span class="string">'.'</span>) &#123; <span class="comment">// this num has been used</span></span><br><span class="line">                </span><br><span class="line">                <span class="keyword">int</span> temp = c -<span class="string">'1'</span>; <span class="comment">// num</span></span><br><span class="line">                <span class="comment">// the num in cur row, col and cell has been used, cannot repeat</span></span><br><span class="line">                row[i][temp] = col[j][temp] = cell[i/<span class="number">3</span>][j/<span class="number">3</span>][temp] = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    dfs(board, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">dfs</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt;&gt;&amp; board, <span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (y == <span class="number">9</span>) x++, y = <span class="number">0</span>; <span class="comment">// this row is done, next level, set y = 0</span></span><br><span class="line">    <span class="keyword">if</span> (x == <span class="number">9</span>) <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">// x to 9 and still true, so this is a solution</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (board[x][y] != <span class="string">'.'</span>) <span class="keyword">return</span> dfs(board, x, y+<span class="number">1</span>); <span class="comment">// this is num, next enumerate</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; i++) &#123;</span><br><span class="line">        <span class="comment">// each num</span></span><br><span class="line">        <span class="keyword">if</span> (!row[x][i] &amp;&amp; !col[y][i] &amp;&amp; !cell[x/<span class="number">3</span>][y/<span class="number">3</span>][i]) &#123; <span class="comment">// not used</span></span><br><span class="line">            board[x][y] = <span class="string">'1'</span> + i;</span><br><span class="line">            row[x][i] = col[y][i] = cell[x/<span class="number">3</span>][y/<span class="number">3</span>][i] = <span class="literal">true</span>; <span class="comment">//used</span></span><br><span class="line">            <span class="keyword">if</span> (dfs(board, x, y+<span class="number">1</span>)) <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">// go next num</span></span><br><span class="line">            row[x][i] = col[y][i] = cell[x/<span class="number">3</span>][y/<span class="number">3</span>][i] = <span class="literal">false</span>;<span class="comment">// recover</span></span><br><span class="line">            board[x][y] = <span class="string">'.'</span>; <span class="comment">// this is '.' before get into dfs</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// if current status in dfs not meet the requirement</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="473-Matchsticks-to-Square"><a href="#473-Matchsticks-to-Square" class="headerlink" title="473. Matchsticks to Square"></a><a href="https://leetcode.com/problems/matchsticks-to-square/" target="_blank" rel="noopener">473. Matchsticks to Square</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">enumaerate each martchstick to square :</span><br><span class="line">prunning :</span><br><span class="line">1. from lagest to small : </span><br><span class="line">    2 cases, 3 cases, 6 cases, 8caese</span><br><span class="line">if start from the bigeest, totoal branches to cut :</span><br><span class="line">    below 2 cases, branches : 3 * 6 * 8 -&gt; so we can cut more</span><br><span class="line">    below 3 cases, branches : 2 * 6 * 8</span><br><span class="line"></span><br><span class="line">2. avoid repeat enumerate :</span><br><span class="line">    for each side, choose the largest to small</span><br><span class="line">3. if cur martchstick fail, skip all the same length</span><br><span class="line">4. if cur martchstick fail, &amp;&amp; it is the first one, </span><br><span class="line">   this whole stratege is fail also, cur this whole branch</span><br><span class="line">5. if cur martchstick fail, &amp;&amp; it is the last one,</span><br><span class="line">    this fail also, since we can swtich it to other places</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt; st; <span class="comment">// this matchstick used or not</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">makesquare</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// check the sum % 4 == 0</span></span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> u : nums) sum += u;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (!sum || sum % <span class="number">4</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    </span><br><span class="line">    sort(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">    reverse(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>()); <span class="comment">// largest to smallest</span></span><br><span class="line">    </span><br><span class="line">    st = <span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt;(nums.<span class="built_in">size</span>());</span><br><span class="line">    <span class="keyword">return</span> dfs(nums, <span class="number">0</span>, <span class="number">0</span>, sum/<span class="number">4</span>); <span class="comment">// cur side, cur length, total need length</span></span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">dfs</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;nums, <span class="keyword">int</span> side, <span class="keyword">int</span> cur, <span class="keyword">int</span> length)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (cur == length) side++, cur = <span class="number">0</span>; <span class="comment">// next side, recover cur = 0</span></span><br><span class="line">    <span class="keyword">if</span> (side == <span class="number">4</span>) <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">// enumerate all sides</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="comment">// this stick not used &amp;&amp; &lt;=</span></span><br><span class="line">        <span class="keyword">if</span> (!st[i] &amp;&amp; cur + nums[i] &lt;= length) &#123;</span><br><span class="line">            st[i] = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">if</span> (dfs(nums, side, cur+nums[i], length)) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">//fail, recover the status</span></span><br><span class="line">            st[i] = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span> (!cur) <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">// if fail and cur stick is the first one, no need to go deep</span></span><br><span class="line">            <span class="keyword">if</span> (cur+nums[i] == length) <span class="keyword">return</span> <span class="literal">false</span>;<span class="comment">// if fail, and cur stick is the last one</span></span><br><span class="line">            </span><br><span class="line">            <span class="keyword">while</span> (i+<span class="number">1</span> &lt; nums.<span class="built_in">size</span>() &amp;&amp; nums[i+<span class="number">1</span>] == nums[i]) i++; <span class="comment">//if fail skip all the same length stick</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2020-03-06T19:04:45.135Z" itemprop="dateUpdated">2020-03-06 13:04:45</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpeg" alt="isFibonacci">
+            isFibonacci
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Structure/" rel="tag">-Data Structure</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/03/03/DFS%20%EF%BC%881%EF%BC%89/&title=《DFS （1）》 — Hi There&pic=http://yoursite.com/img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/03/03/DFS%20%EF%BC%881%EF%BC%89/&title=《DFS （1）》 — Hi There&source=Computer Sicence | University of Minnesota, twin cities" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/03/03/DFS%20%EF%BC%881%EF%BC%89/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《DFS （1）》 — Hi There&url=http://yoursite.com/2020/03/03/DFS%20%EF%BC%881%EF%BC%89/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/03/03/DFS%20%EF%BC%881%EF%BC%89/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2020/03/01/Bit%20Manipulate%EF%BC%880%EF%BC%89/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Bit Manipulate（0）</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'true';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        Total unique visitors：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        Total page views：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>isFibonacci &copy; 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/03/03/DFS%20%EF%BC%881%EF%BC%89/&title=《DFS （1）》 — Hi There&pic=http://yoursite.com/img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/03/03/DFS%20%EF%BC%881%EF%BC%89/&title=《DFS （1）》 — Hi There&source=Computer Sicence | University of Minnesota, twin cities" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/03/03/DFS%20%EF%BC%881%EF%BC%89/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《DFS （1）》 — Hi There&url=http://yoursite.com/2020/03/03/DFS%20%EF%BC%881%EF%BC%89/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/03/03/DFS%20%EF%BC%881%EF%BC%89/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2020/03/03/DFS%20%EF%BC%881%EF%BC%89/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'ヾ(￣▽￣)Bye~Bye~';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'ヾ(=^▽^=)ノ Hello';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
