@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'true', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- End Google Analytics -->
+
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>模拟专题（0） | Hi There | If people do not believe that mathematics is simple, it is only because they do not realize how complicated life is. – John von Neumann.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="-Data Structure">
+    <meta name="description" content="263. Ugly Number123456789bool isUgly(int num) &amp;#123;    int d[] &#x3D; &amp;#123;2, 3, 5&amp;#125;;    for (auto prime : d) &amp;#123;        while (num &gt; 0 &amp;&amp; num % prime &#x3D;&#x3D; 0) &amp;#123;            num &#x2F;&#x3D; pri">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模拟专题（0）">
+<meta property="og:url" content="http://yoursite.com/2020/03/13/%E6%A8%A1%E6%8B%9F%E4%B8%93%E9%A2%98%20(0)/index.html">
+<meta property="og:site_name" content="Hi There">
+<meta property="og:description" content="263. Ugly Number123456789bool isUgly(int num) &amp;#123;    int d[] &#x3D; &amp;#123;2, 3, 5&amp;#125;;    for (auto prime : d) &amp;#123;        while (num &gt; 0 &amp;&amp; num % prime &#x3D;&#x3D; 0) &amp;#123;            num &#x2F;&#x3D; pri">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-13T22:55:00.000Z">
+<meta property="article:modified_time" content="2020-03-15T04:29:26.675Z">
+<meta property="article:author" content="isFibonacci">
+<meta property="article:tag" content="-Data Structure">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="Hi There" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/1.jpeg">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/img/avatar.jpeg" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">isFibonacci</h5>
+          <a href="mailto:xwcehg497@gmail.com" title="xwcehg497@gmail.com" class="mail">xwcehg497@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/isfibonacci" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/isfibonacci" target="_blank" rel="noopener"  >
+                <i class="icon icon-lg icon-code"></i>
+                Project
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.linkedin.com/in/xingwang-cheng-052499171/" target="_blank" rel="noopener"  >
+                <i class="icon icon-lg icon-linkedin"></i>
+                LinkedIn
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.weibo.com/5512263576/profile?topnav=1&wvr=6" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.zhihu.com/people/kujira-89" target="_blank" rel="noopener"  >
+                <i class="icon icon-lg icon-link"></i>
+                Zhihu
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://twitter.com/InsightAha" target="_blank" rel="noopener"  >
+                <i class="icon icon-lg icon-twitter"></i>
+                Twitter
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">模拟专题（0）</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">模拟专题（0）</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-03-13T22:55:00.000Z" itemprop="datePublished" class="page-time">
+  2020-03-13
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/yxcNb/">yxcNb</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#263-Ugly-Number"><span class="post-toc-number">1.</span> <span class="post-toc-text">263. Ugly Number</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#67-Add-Binary"><span class="post-toc-number">2.</span> <span class="post-toc-text">67. Add Binary</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#504-Base-7"><span class="post-toc-number">3.</span> <span class="post-toc-text">504. Base 7</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#54-Spiral-Matrix"><span class="post-toc-number">4.</span> <span class="post-toc-text">54. Spiral Matrix</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#299-Bulls-and-Cows"><span class="post-toc-number">5.</span> <span class="post-toc-text">299. Bulls and Cows</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#481-Magical-String"><span class="post-toc-number">6.</span> <span class="post-toc-text">481. Magical String</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#71-Simplify-Path"><span class="post-toc-number">7.</span> <span class="post-toc-text">71. Simplify Path</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-模拟专题 (0)"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">模拟专题（0）</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-03-13 17:55:00" datetime="2020-03-13T22:55:00.000Z"  itemprop="datePublished">2020-03-13</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/yxcNb/">yxcNb</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="263-Ugly-Number"><a href="#263-Ugly-Number" class="headerlink" title="263. Ugly Number"></a><a href="https://www.acwing.com/solution/LeetCode/content/4743/" target="_blank" rel="noopener">263. Ugly Number</a></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isUgly</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> d[] = &#123;<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> prime : d) &#123;</span><br><span class="line">        <span class="keyword">while</span> (num &gt; <span class="number">0</span> &amp;&amp; num % prime == <span class="number">0</span>) &#123;</span><br><span class="line">            num /= prime;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> num == <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="67-Add-Binary"><a href="#67-Add-Binary" class="headerlink" title="67. Add Binary"></a><a href="https://www.acwing.com/solution/LeetCode/content/151/" target="_blank" rel="noopener">67. Add Binary</a></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">addBinary</span><span class="params">(<span class="built_in">string</span> a, <span class="built_in">string</span> b)</span> </span>&#123;</span><br><span class="line">reverse(a.<span class="built_in">begin</span>(), a.<span class="built_in">end</span>());</span><br><span class="line">reverse(b.<span class="built_in">begin</span>(), b.<span class="built_in">end</span>());</span><br><span class="line"><span class="keyword">int</span> t = <span class="number">0</span>; <span class="comment">// 进位</span></span><br><span class="line"><span class="built_in">string</span> ans;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a.<span class="built_in">size</span>() || i &lt; b.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">    <span class="keyword">int</span> va = i &gt;= a.<span class="built_in">size</span>() ? <span class="number">0</span> : a[i] - <span class="string">'0'</span>;</span><br><span class="line">    <span class="keyword">int</span> vb = i &gt;= b.<span class="built_in">size</span>() ? <span class="number">0</span> : b[i] - <span class="string">'0'</span>;</span><br><span class="line">    <span class="keyword">int</span> s = va + vb + t; <span class="comment">// 1 + 1 + 1</span></span><br><span class="line">    t = s / <span class="number">2</span>, s %= <span class="number">2</span>; <span class="comment">// 3 / 2 = 1, </span></span><br><span class="line">    ans += to_string(s);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (t) ans += <span class="string">'1'</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="built_in">string</span>(ans.rbegin(), ans.rend()); <span class="comment">// string reverse</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">a : 1011 b : 100 -&gt; 1111          | a : 11, b : 1</span></span><br><span class="line"><span class="comment">1101     001 -&gt; 1111          |     11      1 -&gt; 100</span></span><br><span class="line"><span class="comment">s   : 1 1   1   1                   2   2(1+t)</span></span><br><span class="line"><span class="comment">t   : 0 0   0   0 (3/2 = 1)         1   1</span></span><br><span class="line"><span class="comment">res : 1 1   1   1                   0   0 -&gt; if(t) 001 -&gt; 100</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="504-Base-7"><a href="#504-Base-7" class="headerlink" title="504. Base 7"></a><a href="https://www.acwing.com/solution/LeetCode/content/404/" target="_blank" rel="noopener">504. Base 7</a></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">convertToBase7</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">string</span> ans;</span><br><span class="line">    <span class="keyword">bool</span> isNegative = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span> (num &lt; <span class="number">0</span>) num *= <span class="number">-1</span>, isNegative = <span class="literal">true</span>; <span class="comment">// convert negative to positive</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (!num) ans = <span class="string">'0'</span>;</span><br><span class="line">    <span class="keyword">while</span> (num) &#123;</span><br><span class="line">        ans += to_string(num % <span class="number">7</span>);</span><br><span class="line">        num /= <span class="number">7</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (isNegative) ans += <span class="string">'-'</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">string</span>(ans.rbegin(), ans.rend());</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">123 </span></span><br><span class="line"><span class="comment">123 % 10 -&gt; 3</span></span><br><span class="line"><span class="comment">12  % 10 -&gt; 2</span></span><br><span class="line"><span class="comment">1   % 10 -&gt; 1</span></span><br><span class="line"><span class="comment">reverse(321) -&gt; 123 </span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="54-Spiral-Matrix"><a href="#54-Spiral-Matrix" class="headerlink" title="54. Spiral Matrix"></a><a href="https://www.acwing.com/solution/LeetCode/content/144/" target="_blank" rel="noopener">54. Spiral Matrix</a></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">spiralOrder</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; matrix)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ans;</span><br><span class="line">    <span class="keyword">if</span> (matrix.empty()) <span class="keyword">return</span> ans;</span><br><span class="line">    <span class="keyword">int</span> n = matrix.<span class="built_in">size</span>(), m = matrix[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line">    <span class="comment">// recored used or not</span></span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt;&gt; <span class="title">st</span><span class="params">(n, <span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt;(m, <span class="literal">false</span>))</span></span>;</span><br><span class="line">    <span class="keyword">int</span> dx[<span class="number">4</span>] = &#123;<span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>&#125;, dy[<span class="number">4</span>] = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">0</span>, y = <span class="number">0</span>, d = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; n*m; k++) &#123;</span><br><span class="line">        ans.push_back(matrix[x][y]);</span><br><span class="line">        st[x][y] = <span class="literal">true</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> newX = x + dx[d], newY = y + dy[d];</span><br><span class="line">        <span class="keyword">if</span> (newX &lt; <span class="number">0</span> || newX &gt;=n || newY &lt; <span class="number">0</span> || newY &gt;= m || st[newX][newY]) &#123;</span><br><span class="line">            d = (d+<span class="number">1</span>) % <span class="number">4</span>; <span class="comment">// turn around</span></span><br><span class="line">            newX = x + dx[d], newY = y + dy[d];</span><br><span class="line">        &#125;</span><br><span class="line">        x = newX, y = newY;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">d   :   1   2   3   0  </span></span><br><span class="line"><span class="comment">dx  :   0   1   0   -1</span></span><br><span class="line"><span class="comment">dy  :   1   0   -1  0</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="299-Bulls-and-Cows"><a href="#299-Bulls-and-Cows" class="headerlink" title="299. Bulls and Cows"></a><a href="https://www.acwing.com/solution/LeetCode/content/334/" target="_blank" rel="noopener">299. Bulls and Cows</a></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">getHint</span><span class="params">(<span class="built_in">string</span> secret, <span class="built_in">string</span> guess)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">0</span>, b = <span class="number">0</span>, n = guess.<span class="built_in">size</span>();</span><br><span class="line">    <span class="keyword">int</span> da[<span class="number">10</span>] = &#123;<span class="number">0</span>&#125;, db[<span class="number">10</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="comment">// record a, b = min same subsequence len - the same num in the same location</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> x = secret[i] - <span class="string">'0'</span>, y = guess[i] - <span class="string">'0'</span>;</span><br><span class="line">        <span class="keyword">if</span> (x == y) a++; <span class="comment">// same num in same location</span></span><br><span class="line">        da[x]++, db[y]++; <span class="comment">// record each num frequency</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// calculate b</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) b += <span class="built_in">min</span>(da[i], db[i]);</span><br><span class="line">    </span><br><span class="line">    b -= a;  <span class="comment">// same num in diff location, if not equal, will be 0</span></span><br><span class="line">    <span class="keyword">return</span> to_string(a) + <span class="string">'A'</span> + to_string(b) + <span class="string">'B'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1123   0145     da[1:2]     db[0:1, ]   a = 1 b = 1 - 1 = 0</span></span><br><span class="line"><span class="comment">1, 0  :            </span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="481-Magical-String"><a href="#481-Magical-String" class="headerlink" title="481. Magical String"></a><a href="https://www.acwing.com/solution/LeetCode/content/387/" target="_blank" rel="noopener">481. Magical String</a></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">magicalString</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s = <span class="string">"122"</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>, k = <span class="number">1</span>; i &lt; n; i++, k = <span class="number">3</span> -k) &#123; <span class="comment">// k is 1 or 2</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; s[i] - <span class="string">'0'</span>; j++) s += to_string(k);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) ans += s[i] == <span class="string">'1'</span>;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">i = 6</span></span><br><span class="line"><span class="comment">s[2] = 2,   s = 12211</span></span><br><span class="line"><span class="comment">s[3] = 1    s = 122112</span></span><br><span class="line"><span class="comment">s[4] = 1    s = 1221122</span></span><br><span class="line"><span class="comment">s[5] = 2    s = 122112211</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="71-Simplify-Path"><a href="#71-Simplify-Path" class="headerlink" title="71. Simplify Path"></a><a href="https://www.acwing.com/solution/LeetCode/content/156/" target="_blank" rel="noopener">71. Simplify Path</a></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">simplifyPath</span><span class="params">(<span class="built_in">string</span> path)</span> </span>&#123;</span><br><span class="line">        path += <span class="string">'/'</span>; <span class="comment">// if not: /a/.." -&gt; "/a" </span></span><br><span class="line">        <span class="built_in">string</span> ans, temp;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> c : path) &#123;</span><br><span class="line">            <span class="keyword">if</span> (ans.empty()) ans += c; <span class="comment">// '/'</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (c != <span class="string">'/'</span>) temp += c;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// c == '/'</span></span><br><span class="line">                <span class="keyword">if</span> (temp == <span class="string">".."</span>) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (ans.<span class="built_in">size</span>() &gt; <span class="number">1</span>) &#123; <span class="comment">// if == 1 -&gt; '/'</span></span><br><span class="line">                        <span class="comment">// return to up level, clean the ans</span></span><br><span class="line">                        ans.pop_back(); <span class="comment">// /a/../ -&gt; /</span></span><br><span class="line">                        <span class="keyword">while</span> (ans.back() != <span class="string">'/'</span>) ans.pop_back();   </span><br><span class="line">                    &#125; <span class="comment">// if temp == "" will not add into new path, "/home//foo/"</span></span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (temp != <span class="string">""</span> &amp;&amp; temp != <span class="string">"."</span>) ans += temp + <span class="string">'/'</span>; <span class="comment">// new path</span></span><br><span class="line">                temp = <span class="string">""</span>; <span class="comment">// clean temp</span></span><br><span class="line">            &#125; </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (ans.<span class="built_in">size</span>() &gt; <span class="number">1</span>) ans.pop_back();</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">c       :   /a/.. </span></span><br><span class="line"><span class="comment">ans     :   /a/ -&gt; pop_back, /a, so if have /, -&gt; /</span></span><br><span class="line"><span class="comment">temp    :   ..</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2020-03-15T04:29:26.675Z" itemprop="dateUpdated">2020-03-14 23:29:26</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpeg" alt="isFibonacci">
+            isFibonacci
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Structure/" rel="tag">-Data Structure</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/03/13/%E6%A8%A1%E6%8B%9F%E4%B8%93%E9%A2%98%20(0)/&title=《模拟专题（0）》 — Hi There&pic=http://yoursite.com/img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/03/13/%E6%A8%A1%E6%8B%9F%E4%B8%93%E9%A2%98%20(0)/&title=《模拟专题（0）》 — Hi There&source=Computer Sicence | University of Minnesota, twin cities" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/03/13/%E6%A8%A1%E6%8B%9F%E4%B8%93%E9%A2%98%20(0)/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《模拟专题（0）》 — Hi There&url=http://yoursite.com/2020/03/13/%E6%A8%A1%E6%8B%9F%E4%B8%93%E9%A2%98%20(0)/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/03/13/%E6%A8%A1%E6%8B%9F%E4%B8%93%E9%A2%98%20(0)/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2020/03/11/Math%EF%BC%880)/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Math（0）</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'true';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        Total unique visitors：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        Total page views：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>isFibonacci &copy; 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/03/13/%E6%A8%A1%E6%8B%9F%E4%B8%93%E9%A2%98%20(0)/&title=《模拟专题（0）》 — Hi There&pic=http://yoursite.com/img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/03/13/%E6%A8%A1%E6%8B%9F%E4%B8%93%E9%A2%98%20(0)/&title=《模拟专题（0）》 — Hi There&source=Computer Sicence | University of Minnesota, twin cities" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/03/13/%E6%A8%A1%E6%8B%9F%E4%B8%93%E9%A2%98%20(0)/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《模拟专题（0）》 — Hi There&url=http://yoursite.com/2020/03/13/%E6%A8%A1%E6%8B%9F%E4%B8%93%E9%A2%98%20(0)/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/03/13/%E6%A8%A1%E6%8B%9F%E4%B8%93%E9%A2%98%20(0)/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2020/03/13/%E6%A8%A1%E6%8B%9F%E4%B8%93%E9%A2%98%20(0)/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'ヾ(￣▽￣)Bye~Bye~';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'ヾ(=^▽^=)ノ Hello';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
